@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c771ff;
+  background: #b8d1ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2893,56 +2893,4 @@ p#div-border-top-purple {
   border-top-width: 5px;
   border-radius: 3px;
   border-top-color: #9954bb;
-}
-.header {
-  background: url("http://oyy9gorf8.bkt.clouddn.com/background.jpg");
-}
-.menu {
-  margin-top: 20px;
-  padding-left: 0;
-  text-align: center;
-  background: rgba(240,240,240,0.5);
-  margin-left: auto;
-  margin-right: auto;
-  width: 530px;
-  border-radius: initial;
-}
-.brand {
-  background: transparent;
-}
-a {
-  color: rgba(0,0,0,0.8);
-}
-a:hover {
-  color: #ff106c;
-  border-bottom-color: #ff106c;
-}
-.menu .menu-item a {
-  font-size: 14px;
-}
-.menu .menu-item a:hover {
-  border-bottom-color: #ff106c;
-}
-.site-description {
-  font-size: 16px;
-}
-.site-author-name {
-  font-family: 'Comic Sans MS', sans-serif;
-  font-size: 20px;
-}
-.posts-expand .post-eof {
-  margin: 40px auto 40px;
-  background: #fff;
-}
-.btn {
-  margin-top: 20px;
-}
-code {
-  color: #e6006b;
-  background: #fff;
-  border-radius: 3px;
-}
-body {
-  color: #444;
-  font-size: 16px;
 }

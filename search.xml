@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[个人博客常用链接]]></title>
+    <url>%2F-%20%E9%93%BE%E6%8E%A5%2F</url>
+    <content type="text"><![CDATA[服务类七牛云 七牛云是国内领先的企业级云服务商，专注于以数据管理为中心的云计算业务研发和运营，围绕富媒体场景推出了对象存储、融合 CDN 加速、容器计算云、大数据平台、人工智能平台等产品，并提供一站式视频云解决方案。 algolia Algolia是一个强大的托管搜索引擎API，为产品团队提供了创建快速相关搜索所需的资源和工具。 swiftype 搜索引擎 fontawesome fontawesome中文网 Font Awesome 字体为您提供可缩放矢量图标,它可以被定制大小、颜色、阴影以及任何可以用CSS的样式。支持Markdown! vpsraksmart RakSmart数据中心位于美国加州，中国访问速度快，稳定性好，其冗余性能确保了RakSmart国外服务器正常在线时间和快速的访问。 ping值 hostdare 服务器便宜，最低2.99刀，配置不错，而且还可以微信支付 ping值 somagu 一家韩国的服务器！按小时计费，一个月2.59刀]]></content>
+      <categories>
+        <category>实用技术</category>
+      </categories>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

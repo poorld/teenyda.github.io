@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-07T13:32:36.065Z</updated>
+  <updated>2017-11-11T11:28:45.123Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vps常用命令</title>
+    <link href="http://yoursite.com/-%20vps%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/- vps常用命令/</id>
+    <published>2017-11-11T11:28:27.372Z</published>
+    <updated>2017-11-11T11:28:45.123Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://oyy9gorf8.bkt.clouddn.com/%E7%9B%AE%E9%80%81.jpg" alt="此处输入图片的描述"></p><p>#锐速3.10.61.0版命令</p><blockquote><p>启动：service serverSpeeder start<br>停止: service serverSpeeder stop<br>重新加载配置: service serverSpeeder reload<br>重启: service serverSpeeder restart<br>状态: service serverSpeeder status<br>统计: service serverSpeeder stats<br>卸载: chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh unstall -f</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://oyy9gorf8.bkt.clouddn.com/%E7%9B%AE%E9%80%81.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;p&gt;#锐速3.10.61.0版命令&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;启动：service
+      
+    
+    </summary>
+    
+      <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+  </entry>
   
   <entry>
     <title>个人博客常用链接</title>
@@ -37,9 +65,9 @@
       <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
-    
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[《目送》——忧郁]]></title>
     <url>%2F%E5%BF%A7%E9%83%81%2F</url>
-    <content type="text"><![CDATA[忧郁 title: 《目送》——忧郁散文:tags: 文摘photos: “http://oyy9gorf8.bkt.clouddn.com/hexo-%E9%B8%9F.jpg“ 我冲到阳台，凝神看海面，希望看见那“状如雀鹞，而色惨黑”的苦主。可是海上一片风云动摇，光影迷离，任我怎么定情专注，都看不见杜鹃的踪迹。]]></content>
+    <content type="text"><![CDATA[我冲到阳台，凝神看海面，希望看见那“状如雀鹞，而色惨黑”的苦主。可是海上一片风云动摇，光影迷离，任我怎么定情专注，都看不见杜鹃的踪迹。]]></content>
+      <tags>
+        <tag>文摘</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[搭建flarum论坛]]></title>
@@ -35,8 +38,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>vps</tag>
         <tag>链接</tag>
+        <tag>vps</tag>
       </tags>
   </entry>
   <entry>

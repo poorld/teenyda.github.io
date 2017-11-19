@@ -1,47 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[搭建flarum论坛]]></title>
-    <url>%2F%E6%90%AD%E5%BB%BAflarum%E8%AE%BA%E5%9D%9B%2F</url>
-    <content type="text"><![CDATA[本篇文章将介绍如何安装Flarum论坛。我的环境：Ubuntu 16.04.2 x64php7 依次安装apache2、php、mysql-server、php-mysql 1234sudo apt-get install apache2sudo apt-get install php(ubunut14用apt-get install php5)sudo apt-get install mysql-serversudo apt-get install php-mysql(ubunut14用php5-mysql) 下载Flarum中文版1wget http://oyy9gorf8.bkt.clouddn.com/Flarum.zip 安装unzip1sudo apt-get install unzip 将Flarum解压1sudo unzip Flarum.zip 将Flarum文件夹移动到/var/www下面1sudo mv Flarum /var/www 添加权限1sudo chmod -R 777 /var/www/Flarum 开启rewrite12cd /etc/apache2/mods-enabledsudo ln -s ../mods-available/rewrite.load 重定向1sudo vi /etc/apache2/sites-available/000-default.conf 找到DocumentRoot /var/www/html 其中/var/www/html 就是你的网站根目录 把/var/www/html 改为 /var/www/Flarum 并在该文件中的VirtualHost节点之间添加如下代码:123&lt;Directory /var/www/Flarum&gt;AllowOverride All&lt;/Directory&gt; 编辑apache21vi /etc/apache2/apache2.conf 找到12345&lt;Directory /&gt;Options FollowSymLinksAllowOverride NoneRequire all denied&lt;/Directory&gt; 将将AllowOverride None改为AllowOverride All ，Require all denied改为Require all granted. ###创建数据库1mysql -u root -p 输入密码，然后创建一个名为Flarum的数据库1create database Flarum; 输入exit退出数据库 重启apache212sudo service /etc/init.d/apache2 restartubuntu14执行：service apache2 restart 如果在重启apache2出现以下错误1234567 sudo service apache2 restart * Restarting web server apache2 [fail] * The apache2 configtest failed.Output of config test was:apache2: Syntax error on line 140 of /etc/apache2/apache2.conf: Could not open configuration file /etc/apache2/mods-enabled/rewrite.load: No such file or directoryAction &apos;configtest&apos; failed.The Apache error log may have more information. 执行加载Rewrite模块：1a2enmod rewrite 在浏览器输入IP地址，可以看到，遇到了三个问题 解决办法： 第一个问题1sudo apt-get install php-xml 第二个问题1sudo apt-get install php-gd 第三个问题1sudo apt-get install php-mbstring 有的是只有第二个问题The PHP extension ‘gd’ is required.则输入1sudo apt-get install php-gd ubuntu14则执行1sudo apt-get install php5-gd 重启apache1sudo service /etc/init.d/apache2 restart 打开浏览器输入ip地址就能正常安装啦 如果要绑定域名，要修改Flarum目录下的config.php1sudo vi /var/www/Flarum/config.php 找到 ‘url’ =&gt; ‘http://？？？？？‘ 改成1&apos;url&apos; =&gt; &apos;//&apos; . $_SERVER[&apos;HTTP_HOST&apos;], 执行命令php flarum cache:clear &amp;&amp; rm -f assets/rev-manifest.json 主机优惠链接]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>论坛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[vps常用命令]]></title>
-    <url>%2F-%20vps%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[#锐速3.10.61.0版命令 启动：service serverSpeeder start停止: service serverSpeeder stop重新加载配置: service serverSpeeder reload重启: service serverSpeeder restart状态: service serverSpeeder status统计: service serverSpeeder stats卸载: chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh unstall -f]]></content>
-      <categories>
-        <category>实用技术</category>
-      </categories>
-      <tags>
-        <tag>vps</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[个人博客常用链接]]></title>
-    <url>%2F-%20vps%2F</url>
-    <content type="text"><![CDATA[服务类七牛云 七牛云是国内领先的企业级云服务商，专注于以数据管理为中心的云计算业务研发和运营，围绕富媒体场景推出了对象存储、融合 CDN 加速、容器计算云、大数据平台、人工智能平台等产品，并提供一站式视频云解决方案。 algolia Algolia是一个强大的托管搜索引擎API，为产品团队提供了创建快速相关搜索所需的资源和工具。 swiftype 搜索引擎 fontawesome fontawesome中文网 Font Awesome 字体为您提供可缩放矢量图标,它可以被定制大小、颜色、阴影以及任何可以用CSS的样式。支持Markdown! vpsraksmart RakSmart数据中心位于美国加州，中国访问速度快，稳定性好，其冗余性能确保了RakSmart国外服务器正常在线时间和快速的访问。 ping值 hostdare 服务器便宜，最低2.99刀，配置不错，而且还可以微信支付 ping值 somagu 一家韩国的服务器！按小时计费，一个月2.59刀]]></content>
-      <categories>
-        <category>实用技术</category>
-      </categories>
-      <tags>
-        <tag>链接</tag>
-        <tag>vps</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[测试]]></title>
-    <url>%2Fvpn%2F</url>
-    <content type="text"><![CDATA[这是一篇测试文章代码演示 1234567@requires_authorizationclass SomeClass: passif __name__ == '__main__': # A comment print 'hello world' 这是一个访问记录地球仪Loading… 下面是各个配置代码 下载1&lt;a id=&quot;download&quot; href=&quot;http://oyy9gorf8.bkt.clouddn.com/about_1.jpeg&quot;&gt;下载&lt;/a&gt; 颜色块-蓝1&lt;span id=&quot;inline-blue&quot;&gt;颜色块-蓝&lt;/span&gt; 颜色块-紫1&lt;span id=&quot;inline-purple&quot;&gt;颜色块-紫&lt;/span&gt; 左侧边框黄色块级1&lt;p id=&quot;div-border-left-yellow&quot;&gt;左侧边框黄色块级&lt;/p&gt; 左侧边框绿色块级1&lt;p id=&quot;div-border-left-green&quot;&gt;左侧边框绿色块级&lt;/p&gt; 左侧边框蓝色块级1&lt;p id=&quot;div-border-left-blue&quot;&gt;左侧边框蓝色块级&lt;/p&gt; 左侧边框紫色块级1&lt;p id=&quot;div-border-left-purple&quot;&gt;左侧边框紫色块级&lt;/p&gt; 右侧边框红色块级1&lt;p id=&quot;div-border-right-red&quot;&gt;右侧边框红色块级&lt;/p&gt; 右侧边框黄色块级1&lt;p id=&quot;div-border-right-yellow&quot;&gt;右侧边框黄色块级&lt;/p&gt; 右侧边框绿色块级1&lt;p id=&quot;div-border-right-green&quot;&gt;右侧边框绿色块级&lt;/p&gt; 右侧边框蓝色块级1&lt;p id=&quot;div-border-right-blue&quot;&gt;右侧边框蓝色块级&lt;/p&gt; 右侧边框紫色块级1&lt;p id=&quot;div-border-right-purple&quot;&gt;右侧边框紫色块级&lt;/p&gt; 上侧边框红色1&lt;p id=&quot;div-border-top-red&quot;&gt;上侧边框红色&lt;/p&gt; 上侧边框黄色1&lt;p id=&quot;div-border-top-yellow&quot;&gt;上侧边框黄色&lt;/p&gt; 上侧边框绿色1&lt;p id=&quot;div-border-top-green&quot;&gt;上侧边框绿色&lt;/p&gt; 上侧边框蓝色1&lt;p id=&quot;div-border-top-blue&quot;&gt;上侧边框蓝色&lt;/p&gt; 上侧边框紫色1&lt;p id=&quot;div-border-top-purple&quot;&gt;上侧边框紫色&lt;/p&gt;]]></content>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[搭建flarum论坛]]></title>
+      <url>/%E6%90%AD%E5%BB%BAflarum%E8%AE%BA%E5%9D%9B/</url>
+      <content type="html"><![CDATA[<p>本篇文章将介绍如何安装Flarum论坛。我的环境：Ubuntu 16.04.2  x64<br>php7</p>
+<p>依次安装apache2、php、mysql-server、php-mysql</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apache2</div><div class="line">sudo apt-get install php(ubunut14用apt-get install php5)</div><div class="line">sudo apt-get install mysql-server</div><div class="line">sudo apt-get install php-mysql(ubunut14用php5-mysql)</div></pre></td></tr></table></figure>
+<p>下载Flarum中文版<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://oyy9gorf8.bkt.clouddn.com/Flarum.zip</div></pre></td></tr></table></figure></p>
+<p>安装unzip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install unzip</div></pre></td></tr></table></figure></p>
+<p>将Flarum解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo unzip Flarum.zip</div></pre></td></tr></table></figure></p>
+<p>将Flarum文件夹移动到/var/www下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mv Flarum /var/www</div></pre></td></tr></table></figure></p>
+<p>添加权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod -R 777 /var/www/Flarum</div></pre></td></tr></table></figure></p>
+<p>开启rewrite<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/apache2/mods-enabled</div><div class="line">sudo ln -s ../mods-available/rewrite.load</div></pre></td></tr></table></figure></p>
+<p>重定向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apache2/sites-available/000-default.conf</div></pre></td></tr></table></figure></p>
+<p>找到DocumentRoot /var/www/html </p>
+<p>其中/var/www/html 就是你的网站根目录</p>
+<p>把/var/www/html 改为  /var/www/Flarum</p>
+<p>并在该文件中的VirtualHost节点之间添加如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /var/www/Flarum&gt;</div><div class="line">AllowOverride All</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>编辑apache2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/apache2/apache2.conf</div></pre></td></tr></table></figure></p>
+<p>找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /&gt;</div><div class="line">Options FollowSymLinks</div><div class="line">AllowOverride None</div><div class="line">Require all denied</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>将将AllowOverride None改为AllowOverride All ，Require all denied改为Require all granted.</p>
+<p>###创建数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure></p>
+<p>输入密码，然后创建一个名为Flarum的数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database Flarum;</div></pre></td></tr></table></figure></p>
+<p>输入exit退出数据库</p>
+<p>重启apache2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo service /etc/init.d/apache2 restart</div><div class="line">ubuntu14执行：service apache2 restart</div></pre></td></tr></table></figure></p>
+<p>如果在重启apache2出现以下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> sudo service apache2 restart</div><div class="line"> * Restarting web server apache2     [fail]</div><div class="line"> * The apache2 configtest failed.</div><div class="line">Output of config test was:</div><div class="line">apache2: Syntax error on line 140 of /etc/apache2/apache2.conf: Could not open configuration file /etc/apache2/mods-enabled/rewrite.load: No such file or directory</div><div class="line">Action &apos;configtest&apos; failed.</div><div class="line">The Apache error log may have more information.</div></pre></td></tr></table></figure></p>
+<p>执行加载Rewrite模块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod rewrite</div></pre></td></tr></table></figure></p>
+<p>在浏览器输入IP地址，可以看到，遇到了三个问题<img src="http://oyy9gorf8.bkt.clouddn.com/Flarum%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98.png" alt="此处输入图片的描述"></p>
+<p>解决办法：</p>
+<p>第一个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install  php-xml</div></pre></td></tr></table></figure></p>
+<p>第二个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install php-gd</div></pre></td></tr></table></figure></p>
+<p>第三个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install php-mbstring</div></pre></td></tr></table></figure></p>
+<p>有的是只有第二个问题The PHP extension ‘gd’ is required.则输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install php-gd</div></pre></td></tr></table></figure></p>
+<p>ubuntu14则执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install php5-gd</div></pre></td></tr></table></figure></p>
+<p>重启apache<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service /etc/init.d/apache2 restart</div></pre></td></tr></table></figure></p>
+<p>打开浏览器输入ip地址就能正常安装啦</p>
+<p>如果要绑定域名，要修改Flarum目录下的config.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /var/www/Flarum/config.php</div></pre></td></tr></table></figure></p>
+<p>找到 ‘url’ =&gt; ‘<a href="http://？？？？？" target="_blank" rel="external">http://？？？？？</a>‘  改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;url&apos; =&gt; &apos;//&apos; . $_SERVER[&apos;HTTP_HOST&apos;],</div></pre></td></tr></table></figure></p>
+<p>执行命令<br><code>php flarum cache:clear &amp;&amp; rm -f assets/rev-manifest.json</code></p>
+<p><a href="https://m.do.co/c/d9d85e31324b" target="_blank" rel="external">主机优惠链接</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 论坛 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vps常用命令]]></title>
+      <url>/-%20vps%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>#锐速3.10.61.0版命令</p>
+<blockquote>
+<p>启动：service serverSpeeder start<br>停止: service serverSpeeder stop<br>重新加载配置: service serverSpeeder reload<br>重启: service serverSpeeder restart<br>状态: service serverSpeeder status<br>统计: service serverSpeeder stats<br>卸载: chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh unstall -f</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用技术 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vps </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人博客常用链接]]></title>
+      <url>/-%20vps/</url>
+      <content type="html"><![CDATA[<p></p><h1><i class="fa fa-user-circle-o" aria-hidden="true"></i>服务类</h1><br><a href="https://portal.qiniu.com/bucket/teenyda/resource" target="_blank" rel="external">七牛云</a><p></p>
+<blockquote>
+<p>七牛云是国内领先的企业级云服务商，专注于以数据管理为中心的云计算业务研发和运营，围绕富媒体场景推出了对象存储、融合 CDN 加速、容器计算云、大数据平台、人工智能平台等产品，并提供一站式视频云解决方案。</p>
+</blockquote>
+<p><br><br><a href="https://www.algolia.com/" target="_blank" rel="external">algolia</a></p>
+<blockquote>
+<p>Algolia是一个强大的托管搜索引擎API，为产品团队提供了创建快速相关搜索所需的资源和工具。</p>
+</blockquote>
+<p><br><br><a href="https://app.swiftype.com/engines/new" target="_blank" rel="external">swiftype</a></p>
+<blockquote>
+<p>搜索引擎</p>
+</blockquote>
+<p><br><br><a href="http://fontawesome.io/examples/" target="_blank" rel="external">fontawesome</a> <a href="http://fontawesome.io/examples/" target="_blank" rel="external">fontawesome中文网</a></p>
+<blockquote>
+<p>Font Awesome 字体为您提供可缩放矢量图标,它可以被定制大小、颜色、阴影以及任何可以用CSS的样式。支持Markdown!</p>
+</blockquote>
+<p><br></p>
+<p></p><h1><i class="fa fa-ravelry" aria-hidden="true"></i>vps</h1><br><a href="http://cn.raksmart.com/" target="_blank" rel="external">raksmart</a><p></p>
+<blockquote>
+<p>RakSmart数据中心位于美国加州，中国访问速度快，稳定性好，其冗余性能确保了RakSmart国外服务器正常在线时间和快速的访问。</p>
+</blockquote>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/raksmart.png" alt="此处输入图片的描述"><br><span id="inline-blue">ping值</span><br><img src="http://oyy9gorf8.bkt.clouddn.com/ping_raksmart.png" alt="此处输入图片的描述"></p>
+<p><br><br><a href="https://manage.hostdare.com/index.php?language=chinese" target="_blank" rel="external">hostdare</a></p>
+<blockquote>
+<p>服务器便宜，最低2.99刀，配置不错，而且还可以微信支付</p>
+</blockquote>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/hostdare.png" alt="此处输入图片的描述"><br><span id="inline-blue">ping值</span><br><img src="http://oyy9gorf8.bkt.clouddn.com/ping_hostdart.png" alt="此处输入图片的描述"></p>
+<p><br><br><a href="https://www.somagu.com/vps/create/1" target="_blank" rel="external">somagu</a></p>
+<blockquote>
+<p>一家韩国的服务器！按小时计费，一个月2.59刀</p>
+</blockquote>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/somagu.png" alt="此处输入图片的描述"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用技术 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 链接 </tag>
+            
+            <tag> vps </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[测试]]></title>
+      <url>/vpn/</url>
+      <content type="html"><![CDATA[<p>这是一篇测试文章<br>代码演示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment"># A comment</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'hello world'</span></div></pre></td></tr></table></figure>
+<p>这是一个访问记录地球仪<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><br><span class="sr-only">Loading…</span></p>
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5fx3g873mf4&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+
+<p id="div-border-top-red">下面是各个配置代码</p>
+
+<p><a id="download" href="http://oyy9gorf8.bkt.clouddn.com/about_1.jpeg" target="_blank" rel="external">下载</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a id=&quot;download&quot; href=&quot;http://oyy9gorf8.bkt.clouddn.com/about_1.jpeg&quot;&gt;下载&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p><span id="inline-blue">颜色块-蓝</span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;inline-blue&quot;&gt;颜色块-蓝&lt;/span&gt;</div></pre></td></tr></table></figure></p>
+<p><br><br><span id="inline-purple">颜色块-紫</span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;inline-purple&quot;&gt;颜色块-紫&lt;/span&gt;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p></p><p id="div-border-left-yellow">左侧边框黄色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-yellow&quot;&gt;左侧边框黄色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-left-green">左侧边框绿色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-green&quot;&gt;左侧边框绿色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-left-blue">左侧边框蓝色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-blue&quot;&gt;左侧边框蓝色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p></p><p id="div-border-left-purple">左侧边框紫色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-purple&quot;&gt;左侧边框紫色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-right-red">右侧边框红色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-red&quot;&gt;右侧边框红色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p> <br></p>
+<p></p><p id="div-border-right-yellow">右侧边框黄色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-yellow&quot;&gt;右侧边框黄色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p> <br></p>
+<p></p><p id="div-border-right-green">右侧边框绿色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-green&quot;&gt;右侧边框绿色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p> <br></p>
+<p></p><p id="div-border-right-blue">右侧边框蓝色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-blue&quot;&gt;右侧边框蓝色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p> <br></p>
+<p></p><p id="div-border-right-purple">右侧边框紫色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-purple&quot;&gt;右侧边框紫色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-top-red">上侧边框红色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-red&quot;&gt;上侧边框红色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-top-yellow">上侧边框黄色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-yellow&quot;&gt;上侧边框黄色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-top-green">上侧边框绿色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-green&quot;&gt;上侧边框绿色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-top-blue">上侧边框蓝色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-blue&quot;&gt;上侧边框蓝色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+<p><br></p>
+<p></p><p id="div-border-top-purple">上侧边框紫色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-purple&quot;&gt;上侧边框紫色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>
+]]></content>
+      
+        
+    </entry>
+    
+  
+  
 </search>

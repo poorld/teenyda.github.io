@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ububtu更换内核（安装锐速）]]></title>
+    <url>%2Fubuntu%E6%9B%B4%E6%8D%A2%E5%86%85%E6%A0%B8%2F</url>
+    <content type="text"><![CDATA[本篇文章主要是介绍更换内核版本为锐速所支持的版本！ ubuntu更换内核版本为：linux-image-3.03.-24-generic 首先保证你的服务器是64位系统，锐速不支持任何ubuntu14.04的32位系统 1.安装3.13.0-24-generic内核1sudo apt-get install linux-image-extra-3.13.0-24-generic 2.查看当前安装的内核：1dpkg -l | grep linux-image 3.除了3.13.0-24-generic的内核，我们把他们卸载掉12sudo apt-get purge linux-image-3.13.0-121-generic linux-image-3.13.0-128-generic(多个内核用空格隔开)... 可以看到，最后只剩下我们所要的内核() 4.更新grub系统引导文件：1sudo update-grub 5.重启1sudo reboot 6.重启之后可以看到，我们用的是3.13.0-24-generic1uname -r 7.安装锐速破解版：12wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.shbash serverspeeder.sh 安装成功！ 锐速相关命令： 开始：service serverSpeeder start停止：service serverSpeeder stop重新加载配置：service serverSpeeder reload重启：service serverSpeeder restart状态：service serverSpeeder status统计：service serverSpeeder stats更新许可文件：service serverSpeeder renewLic更新：service serverSpeeder update卸载：service serverSpeeder uninstall]]></content>
+      <categories>
+        <category>实用技术</category>
+      </categories>
+      <tags>
+        <tag>vps</tag>
+        <tag>锐速</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[（笑话）将错就错]]></title>
     <url>%2F-%20%E7%AC%91%E8%AF%9D%2F</url>
     <content type="text"><![CDATA[一日午夜，睡梦中突然————“铃~ ~铃” 电话暴响。“谁这么晚还打电话？”揉揉惺忪睡眼，黑暗中，我摸起电话。“喂，谁呀？”“大舅，是我。”“哦，是你呀，外甥。”“大舅，你身体还好吗？”“挺好的。”“我舅妈身体好吗？”“都挺好的。”“咦？大舅，你的声音怎么变了？”“因为你打错电话了，外甥。”对方愣了5秒，然后电话中传来“嘟~ 嘟 ~” 的忙音。]]></content>
@@ -46,8 +58,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>链接</tag>
         <tag>vps</tag>
+        <tag>链接</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-25T06:54:52.884Z</updated>
+  <updated>2017-11-25T07:04:34.126Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,38 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>服务器用sendgrid发邮件</title>
-    <link href="http://yoursite.com/sendgrid%E9%82%AE%E4%BB%B6/"/>
-    <id>http://yoursite.com/sendgrid邮件/</id>
-    <published>2017-11-25T06:54:33.704Z</published>
-    <updated>2017-11-25T06:54:52.884Z</updated>
-    
-    <content type="html"><![CDATA[<p id="div-border-left-green">注册地址：<a href="https://sendgrid.com/" target="_blank" rel="external">sendgrid</a></p><p>进入仪表盘，点击Setup Guide<br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_1.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_2.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_3.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_4.PNG" alt=""></p><p>把API key复制下来<br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_5.PNG" alt=""></p><p>官方python教程地址<a href="https://github.com/sendgrid/sendgrid-python#with-mail-helper-class" target="_blank" rel="external">Github</a><br>按照官方教程，我们测试发送一封邮件！</p><blockquote><p>YOUR_API_KEY 就是刚才的api key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo &quot;export SENDGRID_API_KEY=&apos;YOUR_API_KEY&apos;&quot; &gt; sendgrid.env</div><div class="line">echo &quot;sendgrid.env&quot; &gt;&gt; .gitignore</div><div class="line">source ./sendgrid.env</div></pre></td></tr></table></figure></p></blockquote><p>安装Sendgrid<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get python-pip</div><div class="line">sudo pip install sendgrid</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_6.PNG" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import sendgrid</div><div class="line">import os</div><div class="line">from sendgrid.helpers.mail import *</div><div class="line"></div><div class="line">sg = sendgrid.SendGridAPIClient(apikey=os.environ.get(&apos;SENDGRID_API_KEY&apos;))</div><div class="line">from_email = Email(&quot;test@example.com&quot;)</div><div class="line">to_email = Email(&quot;test@example.com&quot;)</div><div class="line">subject = &quot;Sending with SendGrid is Fun&quot;</div><div class="line">content = Content(&quot;text/plain&quot;, &quot;and easy to do anywhere, even with Python&quot;)</div><div class="line">mail = Mail(from_email, subject, to_email, content)</div><div class="line">response = sg.client.mail.send.post(request_body=mail.get())</div><div class="line">print(response.status_code)</div><div class="line">print(response.body)</div><div class="line">print(response.headers)</div></pre></td></tr></table></figure><p><span id="inline-blue">发送成功！</span></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_7.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_8.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_9.PNG" alt=""></p><p>为了防止邮箱被轰炸，所以涂鸦了-_- </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p id=&quot;div-border-left-green&quot;&gt;注册地址：&lt;a href=&quot;https://sendgrid.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sendgrid&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;进入仪表盘，点击Setup Guide&lt;b
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="邮件" scheme="http://yoursite.com/tags/%E9%82%AE%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ububtu更换内核（安装锐速）</title>
     <link href="http://yoursite.com/ubuntu%E6%9B%B4%E6%8D%A2%E5%86%85%E6%A0%B8/"/>
     <id>http://yoursite.com/ubuntu更换内核/</id>
-    <published>2017-11-24T11:25:31.738Z</published>
-    <updated>2017-11-24T11:25:37.875Z</updated>
+    <published>2017-11-25T07:04:30.476Z</published>
+    <updated>2017-11-25T07:04:34.126Z</updated>
     
     <content type="html"><![CDATA[<p id="div-border-left-yellow">本篇文章主要是介绍更换内核版本为锐速所支持的版本！</p><p>ubuntu更换内核版本为：linux-image-3.03.-24-generic</p><p><span id="inline-purple">首先保证你的服务器是64位系统，锐速不支持任何ubuntu14.04的32位系统</span></p><p>1.安装3.13.0-24-generic内核<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install linux-image-extra-3.13.0-24-generic</div></pre></td></tr></table></figure></p><p>2.查看当前安装的内核：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -l | grep linux-image</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image.PNG" alt=""><br>3.除了3.13.0-24-generic的内核，我们把他们卸载掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get purge linux-image-3.13.0-121-generic linux-image-3.13.0-128-generic</div><div class="line">(多个内核用空格隔开)...</div></pre></td></tr></table></figure></p><p>可以看到，最后只剩下我们所要的内核<br><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image2.PNG" alt=""></p><p>4.更新grub系统引导文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo update-grub</div></pre></td></tr></table></figure></p><p>5.重启<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo reboot</div></pre></td></tr></table></figure></p><p>6.重启之后可以看到，我们用的是3.13.0-24-generic<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image3.PNG" alt=""></p><p>7.安装锐速破解版：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</div><div class="line">bash serverspeeder.sh</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image4.PNG" alt=""></p><p>安装成功！</p><p>锐速相关命令：</p><blockquote><p>开始：service serverSpeeder start<br>停止：service serverSpeeder stop<br>重新加载配置：service serverSpeeder reload<br>重启：service serverSpeeder restart<br>状态：service serverSpeeder status<br>统计：service serverSpeeder stats<br>更新许可文件：service serverSpeeder renewLic<br>更新：service serverSpeeder update<br>卸载：service serverSpeeder uninstall</p></blockquote>]]></content>
     
@@ -70,6 +43,33 @@
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
     
       <category term="锐速" scheme="http://yoursite.com/tags/%E9%94%90%E9%80%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器用sendgrid发邮件</title>
+    <link href="http://yoursite.com/sendgrid%E9%82%AE%E4%BB%B6/"/>
+    <id>http://yoursite.com/sendgrid邮件/</id>
+    <published>2017-11-25T07:01:55.820Z</published>
+    <updated>2017-11-25T07:02:00.610Z</updated>
+    
+    <content type="html"><![CDATA[<p id="div-border-left-green">注册地址：<a href="https://sendgrid.com/" target="_blank" rel="external">sendgrid</a></p><p>进入仪表盘，点击Setup Guide<br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_1.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_2.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_3.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_4.PNG" alt=""></p><p>把API key复制下来<br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_5.PNG" alt=""></p><p>官方python教程地址<a href="https://github.com/sendgrid/sendgrid-python#with-mail-helper-class" target="_blank" rel="external">Github</a><br>按照官方教程，我们测试发送一封邮件！</p><blockquote><p>YOUR_API_KEY 就是刚才的api key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo &quot;export SENDGRID_API_KEY=&apos;YOUR_API_KEY&apos;&quot; &gt; sendgrid.env</div><div class="line">echo &quot;sendgrid.env&quot; &gt;&gt; .gitignore</div><div class="line">source ./sendgrid.env</div></pre></td></tr></table></figure></p></blockquote><p>安装Sendgrid<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get python-pip</div><div class="line">sudo pip install sendgrid</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_6.PNG" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import sendgrid</div><div class="line">import os</div><div class="line">from sendgrid.helpers.mail import *</div><div class="line"></div><div class="line">sg = sendgrid.SendGridAPIClient(apikey=os.environ.get(&apos;SENDGRID_API_KEY&apos;))</div><div class="line">from_email = Email(&quot;test@example.com&quot;)</div><div class="line">to_email = Email(&quot;test@example.com&quot;)</div><div class="line">subject = &quot;Sending with SendGrid is Fun&quot;</div><div class="line">content = Content(&quot;text/plain&quot;, &quot;and easy to do anywhere, even with Python&quot;)</div><div class="line">mail = Mail(from_email, subject, to_email, content)</div><div class="line">response = sg.client.mail.send.post(request_body=mail.get())</div><div class="line">print(response.status_code)</div><div class="line">print(response.body)</div><div class="line">print(response.headers)</div></pre></td></tr></table></figure><p><span id="inline-blue">发送成功！</span><i class="fa fa-envelope-open" aria-hidden="true"></i></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_7.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_8.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_9.PNG" alt=""></p><p>为了防止邮箱被轰炸，所以涂鸦了-_- </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p id=&quot;div-border-left-green&quot;&gt;注册地址：&lt;a href=&quot;https://sendgrid.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sendgrid&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;进入仪表盘，点击Setup Guide&lt;b
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="邮件" scheme="http://yoursite.com/tags/%E9%82%AE%E4%BB%B6/"/>
     
   </entry>
   

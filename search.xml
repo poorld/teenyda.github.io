@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[服务器用sendgrid发邮件]]></title>
-    <url>%2Fsendgrid%E9%82%AE%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[注册地址：sendgrid 进入仪表盘，点击Setup Guide 把API key复制下来 官方python教程地址Github按照官方教程，我们测试发送一封邮件！ YOUR_API_KEY 就是刚才的api key123echo &quot;export SENDGRID_API_KEY=&apos;YOUR_API_KEY&apos;&quot; &gt; sendgrid.envecho &quot;sendgrid.env&quot; &gt;&gt; .gitignoresource ./sendgrid.env 安装Sendgrid12sudo apt-get python-pipsudo pip install sendgrid 1234567891011121314import sendgridimport osfrom sendgrid.helpers.mail import *sg = sendgrid.SendGridAPIClient(apikey=os.environ.get(&apos;SENDGRID_API_KEY&apos;))from_email = Email(&quot;test@example.com&quot;)to_email = Email(&quot;test@example.com&quot;)subject = &quot;Sending with SendGrid is Fun&quot;content = Content(&quot;text/plain&quot;, &quot;and easy to do anywhere, even with Python&quot;)mail = Mail(from_email, subject, to_email, content)response = sg.client.mail.send.post(request_body=mail.get())print(response.status_code)print(response.body)print(response.headers) 发送成功！ 为了防止邮箱被轰炸，所以涂鸦了-_-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>邮件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ububtu更换内核（安装锐速）]]></title>
     <url>%2Fubuntu%E6%9B%B4%E6%8D%A2%E5%86%85%E6%A0%B8%2F</url>
     <content type="text"><![CDATA[本篇文章主要是介绍更换内核版本为锐速所支持的版本！ ubuntu更换内核版本为：linux-image-3.03.-24-generic 首先保证你的服务器是64位系统，锐速不支持任何ubuntu14.04的32位系统 1.安装3.13.0-24-generic内核1sudo apt-get install linux-image-extra-3.13.0-24-generic 2.查看当前安装的内核：1dpkg -l | grep linux-image 3.除了3.13.0-24-generic的内核，我们把他们卸载掉12sudo apt-get purge linux-image-3.13.0-121-generic linux-image-3.13.0-128-generic(多个内核用空格隔开)... 可以看到，最后只剩下我们所要的内核 4.更新grub系统引导文件：1sudo update-grub 5.重启1sudo reboot 6.重启之后可以看到，我们用的是3.13.0-24-generic1uname -r 7.安装锐速破解版：12wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.shbash serverspeeder.sh 安装成功！ 锐速相关命令： 开始：service serverSpeeder start停止：service serverSpeeder stop重新加载配置：service serverSpeeder reload重启：service serverSpeeder restart状态：service serverSpeeder status统计：service serverSpeeder stats更新许可文件：service serverSpeeder renewLic更新：service serverSpeeder update卸载：service serverSpeeder uninstall]]></content>
@@ -21,6 +10,17 @@
       <tags>
         <tag>vps</tag>
         <tag>锐速</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器用sendgrid发邮件]]></title>
+    <url>%2Fsendgrid%E9%82%AE%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[注册地址：sendgrid 进入仪表盘，点击Setup Guide 把API key复制下来 官方python教程地址Github按照官方教程，我们测试发送一封邮件！ YOUR_API_KEY 就是刚才的api key123echo &quot;export SENDGRID_API_KEY=&apos;YOUR_API_KEY&apos;&quot; &gt; sendgrid.envecho &quot;sendgrid.env&quot; &gt;&gt; .gitignoresource ./sendgrid.env 安装Sendgrid12sudo apt-get python-pipsudo pip install sendgrid 1234567891011121314import sendgridimport osfrom sendgrid.helpers.mail import *sg = sendgrid.SendGridAPIClient(apikey=os.environ.get(&apos;SENDGRID_API_KEY&apos;))from_email = Email(&quot;test@example.com&quot;)to_email = Email(&quot;test@example.com&quot;)subject = &quot;Sending with SendGrid is Fun&quot;content = Content(&quot;text/plain&quot;, &quot;and easy to do anywhere, even with Python&quot;)mail = Mail(from_email, subject, to_email, content)response = sg.client.mail.send.post(request_body=mail.get())print(response.status_code)print(response.body)print(response.headers) 发送成功！ 为了防止邮箱被轰炸，所以涂鸦了-_-]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>邮件</tag>
       </tags>
   </entry>
   <entry>

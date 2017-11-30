@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[MySQL相关命令]]></title>
     <url>%2F-%20mysql%2F</url>
-    <content type="text"><![CDATA[SQL语句通常可分为如下几种类型。查询语句： 主要由selsct关键字完成，查询语句是SQL语句中最复杂、功能最丰富的语句。DML语句（数据操作语言）： 主要由insert、update和delete三个关键字完成。DDL语句（数据定义语言）： 主要由create、alter、drop和truncate四个关键字完成。DCL语句（数据控制语言）： 主要由grant和revoke两个关键字完成。事务控制语句： 主要由commit、rollback和savepoint三个关键字完成。 MySQL相关命令1.登录命令1mysql -u username -p 2.创建用户1create user &apos;用户名&apos;@&apos;localhost&apos; identified by &apos;密码&apos; 2.1 赋权限1grant all privileges on &apos;数据库名&apos;.* to &apos;用户名&apos;@&apos;localhost&apos; 3.查看数据库的信息1show create database 库名 4.修改数据库编码1alter database 库名 default character SET 编码方式 collate 编码方式_bin 5.删除数据库1drop database 数据库名 6.查看表结构(表的字段信息)1desc 表名 7.修改表名1alter table 旧表名 rename to 新表名 8.修改字段名1alter table 表名 change 旧字段 新字段 新数据类型 9.修改字段类型1alter table 表名 modify 字段名 数据类型 10.添加字段1alter table 表名 add 新字段名 数据类型 [约束条件][FIRST|AFLTER 已存在字段名] 例如table test my_db add age INT```1211.删除字段 alter table 表名 drop 字段名1212.删除表名 drop table 表名1213.删除表中所有记录 delect from 表名或者truncate [TABLE] 表名```]]></content>
+    <content type="text"><![CDATA[SQL语句通常可分为如下几种类型。查询语句： 主要由selsct关键字完成，查询语句是SQL语句中最复杂、功能最丰富的语句。DML语句（数据操作语言）： 主要由insert、update和delete三个关键字完成。DDL语句（数据定义语言）： 主要由create、alter、drop和truncate四个关键字完成。DCL语句（数据控制语言）： 主要由grant和revoke两个关键字完成。事务控制语句： 主要由commit、rollback和savepoint三个关键字完成。 MySQL相关命令1.登录命令1mysql -u username -p 2.创建用户1create user &apos;用户名&apos;@&apos;localhost&apos; identified by &apos;密码&apos; 2.1 赋权限1grant all privileges on &apos;数据库名&apos;.* to &apos;用户名&apos;@&apos;localhost&apos; 3.查看数据库的信息1show create database 库名 4.修改数据库编码1alter database 库名 default character SET 编码方式 collate 编码方式_bin 5.删除数据库1drop database 数据库名 6.查看表结构(表的字段信息)1desc 表名 7.修改表名1alter table 旧表名 rename to 新表名 8.修改字段名1alter table 表名 change 旧字段 新字段 新数据类型 9.修改字段类型1alter table 表名 modify 字段名 数据类型 10.添加字段1alter table 表名 add 新字段名 数据类型 [约束条件][FIRST|AFLTER 已存在字段名] 例如1alter table test my_db add age INT 11.删除字段1alter table 表名 drop 字段名 12.删除表名1drop table 表名 13.删除表中所有记录123delect from 表名或者truncate [TABLE] 表名]]></content>
       <tags>
         <tag>mysql</tag>
       </tags>
@@ -77,8 +77,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>链接</tag>
         <tag>vps</tag>
+        <tag>链接</tag>
       </tags>
   </entry>
   <entry>

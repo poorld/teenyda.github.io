@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[MySQL解决中文乱码问题]]></title>
     <url>%2F-%20mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）：![http://oyy9gorf8.bkt.clouddn.com/mysql_1.PNG] 查看test表的结构1show create database test; ![http://oyy9gorf8.bkt.clouddn.com/mysql_2.PNG] 改变test表的编码方式:1alter database test default character set utf8 collate utf8_bin; 这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码1show variables like &apos;%char%&apos;; ![http://oyy9gorf8.bkt.clouddn.com/mysql_3.PNG] 我们把character_set_client、character_set_connection、character_set_database、character_set_server都设为utf81234set character_set_client=utf8;set character_set_connection=utf8;set character_set_database=utf8;set character_set_server=utf8; 查看编码![http://oyy9gorf8.bkt.clouddn.com/mysql_4.PNG] 如果原来的表不可以插入中文的话，可以重建一张表；![http://oyy9gorf8.bkt.clouddn.com/mysql_5.PNG]]]></content>
+    <content type="text"><![CDATA[有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）： 查看test表的结构1show create database test; 改变test表的编码方式:1alter database test default character set utf8 collate utf8_bin; 这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码1show variables like &apos;%char%&apos;; 我们把character_set_client、character_set_connection、character_set_database、character_set_server都设为utf81234set character_set_client=utf8;set character_set_connection=utf8;set character_set_database=utf8;set character_set_server=utf8; 查看编码 如果原来的表不可以插入中文的话，可以重建一张表；]]></content>
       <tags>
         <tag>mysql</tag>
       </tags>

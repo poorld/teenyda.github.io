@@ -323,7 +323,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-08T16:41:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-08T16:44:39+08:00">
                 2017-12-08
               </time>
             
@@ -363,10 +363,13 @@
       
         
           
-          有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）：![http://oyy9gorf8.bkt.clouddn.com/mysql_1.PNG]
+          有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）：
 查看test表的结构1show create database test;
-![http://oyy9gorf8.bkt.clouddn.com/mysql_2.PNG]
-改变test表的编码方式:1alter database test default character set utf8 collate utf
+
+改变test表的编码方式:1alter database test default character set utf8 collate utf8_bin;
+这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码1show variables like &apos;%char%&apos;;
+
+我们把character_s
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -493,7 +496,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://oyy9gorf8.bkt.clouddn.com/mysql-title.jpg" rel="gallery_cjaxnyd6l0003xwqivsnx3fv9"
+                 href="http://oyy9gorf8.bkt.clouddn.com/mysql-title.jpg" rel="gallery_cjaxo14ou0000u8qitbhsrse3"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://oyy9gorf8.bkt.clouddn.com/mysql-title.jpg" itemprop="contentUrl"/>
               </a>
@@ -658,7 +661,7 @@ MySQL相关
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://oyy9gorf8.bkt.clouddn.com/sendgraid.PNG" rel="gallery_cjaxnyd75000gxwqio55opejv"
+                 href="http://oyy9gorf8.bkt.clouddn.com/sendgraid.PNG" rel="gallery_cjaxo14ph000hu8qi68gs5mfy"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid.PNG" itemprop="contentUrl"/>
               </a>

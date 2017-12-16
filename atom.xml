@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-15T15:34:12.648Z</updated>
+  <updated>2017-12-16T11:38:42.617Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VPS性能测试</title>
+    <link href="http://yoursite.com/-%20vps%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/- vps性能测试/</id>
+    <published>2017-12-16T11:38:29.633Z</published>
+    <updated>2017-12-16T11:38:42.617Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、VPS性能测试：CPU物理个数、内核、超线程、多核心<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/cpuinfo</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/cpu.png" alt=""></p><p>二、VPS性能测试：内存大小、交换空间、高速缓存、实际使用内存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/meminfo</div></pre></td></tr></table></figure></p><p>查看占用的内存大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">free -m</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216191912.png" alt=""><br>计算VPS真实的使用内存方法是：Total-Free-Cached=真实使用内存<br>即： 486-11-214 = 261 表示我的VPS真实使用的内存是261MB</p><p>三、VPS性能测试：磁盘IO读写速度、SSD硬盘速度测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dd if=/dev/zero of=test bs=64k count=4k oflag=dsync</div><div class="line">dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync</div></pre></td></tr></table></figure></p><p>VPS硬盘IO负载测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">top</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216192433.png" alt=""></p><p>速度测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://cachefly.cachefly.net/100mb.test &amp;&amp; rm 100mb.test</div></pre></td></tr></table></figure></p><p>测试VPS主机在世界各地的下载速度的一键脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget freevps.us/downloads/bench.sh -O - -o /dev/null | bash</div></pre></td></tr></table></figure></p><p>测试VPS主机入口与出口的带宽一键脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py</div><div class="line">python speedtest.py</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216193029.png" alt=""></p><p>参考链接：<br><a href="https://www.freehao123.com/vps-cpu-io-unixbench/" target="_blank" rel="external">免费资源部落</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一、VPS性能测试：CPU物理个数、内核、超线程、多核心&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t
+      
+    
+    </summary>
+    
+      <category term="使用技术" scheme="http://yoursite.com/categories/%E4%BD%BF%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL存储过程练习</title>
@@ -266,9 +291,9 @@
       <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
-    
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   

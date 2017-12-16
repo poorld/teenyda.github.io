@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vps," />
 
 
 
@@ -82,16 +82,23 @@
 
 
 
-<meta name="description" content="luhut">
-<meta property="og:type" content="website">
-<meta property="og:title" content="teenyda">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+<meta name="description" content="一、VPS性能测试：CPU物理个数、内核、超线程、多核心1cat /proc/cpuinfo  二、VPS性能测试：内存大小、交换空间、高速缓存、实际使用内存1cat /proc/meminfo 查看占用的内存大小1free -m 计算VPS真实的使用内存方法是：Total-Free-Cached=真实使用内存即： 486-11-214 = 261 表示我的VPS真实使用的内存是261MB 三、V">
+<meta name="keywords" content="vps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPS性能测试">
+<meta property="og:url" content="http://yoursite.com/- vps性能测试/index.html">
 <meta property="og:site_name" content="teenyda">
-<meta property="og:description" content="luhut">
+<meta property="og:description" content="一、VPS性能测试：CPU物理个数、内核、超线程、多核心1cat /proc/cpuinfo  二、VPS性能测试：内存大小、交换空间、高速缓存、实际使用内存1cat /proc/meminfo 查看占用的内存大小1free -m 计算VPS真实的使用内存方法是：Total-Free-Cached=真实使用内存即： 486-11-214 = 261 表示我的VPS真实使用的内存是261MB 三、V">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/cpu.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216191912.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216192433.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216193029.png">
+<meta property="og:updated_time" content="2017-12-16T11:38:42.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="teenyda">
-<meta name="twitter:description" content="luhut">
+<meta name="twitter:title" content="VPS性能测试">
+<meta name="twitter:description" content="一、VPS性能测试：CPU物理个数、内核、超线程、多核心1cat /proc/cpuinfo  二、VPS性能测试：内存大小、交换空间、高速缓存、实际使用内存1cat /proc/meminfo 查看占用的内存大小1free -m 计算VPS真实的使用内存方法是：Total-Free-Cached=真实使用内存即： 486-11-214 = 261 表示我的VPS真实使用的内存是261MB 三、V">
+<meta name="twitter:image" content="http://oyy9gorf8.bkt.clouddn.com/cpu.png">
 
 
 
@@ -121,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/12/"/>
+  <link rel="canonical" href="http://yoursite.com/- vps性能测试/"/>
 
 
 
 
 
-  <title>归档 | teenyda</title>
+  <title>VPS性能测试 | teenyda</title>
   
 
 
@@ -146,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/teenyda/teenyda.github.io"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,148 +284,181 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/- vps性能测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teenyda">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oyy9gorf8.bkt.clouddn.com/image/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="teenyda">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">VPS性能测试</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-16T19:38:29+08:00">
+                2017-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/使用技术/" itemprop="url" rel="index">
+                    <span itemprop="name">使用技术</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/- vps性能测试/" itemprop="url">
-              
-                <span itemprop="name">VPS性能测试</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-16T19:38:29+08:00"
-              content="2017-12-16" >
-          12-16
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/- mysql存储过程/" itemprop="url">
-              
-                <span itemprop="name">MySQL存储过程练习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-15T23:34:07+08:00"
-              content="2017-12-15" >
-          12-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/- mysql中文乱码/" itemprop="url">
-              
-                <span itemprop="name">MySQL解决中文乱码问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-08T17:33:08+08:00"
-              content="2017-12-08" >
-          12-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>一、VPS性能测试：CPU物理个数、内核、超线程、多核心<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/cpuinfo</div></pre></td></tr></table></figure></p>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/cpu.png" alt=""></p>
+<p>二、VPS性能测试：内存大小、交换空间、高速缓存、实际使用内存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/meminfo</div></pre></td></tr></table></figure></p>
+<p>查看占用的内存大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">free -m</div></pre></td></tr></table></figure></p>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216191912.png" alt=""><br>计算VPS真实的使用内存方法是：Total-Free-Cached=真实使用内存<br>即： 486-11-214 = 261 表示我的VPS真实使用的内存是261MB</p>
+<p>三、VPS性能测试：磁盘IO读写速度、SSD硬盘速度测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dd if=/dev/zero of=test bs=64k count=4k oflag=dsync</div><div class="line">dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync</div></pre></td></tr></table></figure></p>
+<p>VPS硬盘IO负载测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">top</div></pre></td></tr></table></figure></p>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216192433.png" alt=""></p>
+<p>速度测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://cachefly.cachefly.net/100mb.test &amp;&amp; rm 100mb.test</div></pre></td></tr></table></figure></p>
+<p>测试VPS主机在世界各地的下载速度的一键脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget freevps.us/downloads/bench.sh -O - -o /dev/null | bash</div></pre></td></tr></table></figure></p>
+<p>测试VPS主机入口与出口的带宽一键脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py</div><div class="line">python speedtest.py</div></pre></td></tr></table></figure></p>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20171216193029.png" alt=""></p>
+<p>参考链接：<br><a href="https://www.freehao123.com/vps-cpu-io-unixbench/" target="_blank" rel="external">免费资源部落</a></p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vps/" rel="tag"><i class="fa fa-tag"></i> vps</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/- mysql存储过程/" rel="next" title="MySQL存储过程练习">
+                <i class="fa fa-chevron-left"></i> MySQL存储过程练习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -426,6 +466,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -678,6 +722,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

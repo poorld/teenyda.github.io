@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[视频测试]]></title>
     <url>%2F-%20%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"><![CDATA[(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://v.youku.com/v_show/id_XMzEyNDAwMjI0MA==.html?spm=a2h1n.8261147.point_reload_121.5~5~5!2~5~A","pic":"http://home.ustc.edu.cn/~mmmwhy/GEM.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})() 作者：mmmwhy链接：http://www.jianshu.com/p/26a7fc7cc185來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。]]></content>
+    <content type="text"><![CDATA[(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://v.youku.com/v_show/id_XMzEyNDAwMjI0MA==.html?spm=a2h1n.8261147.point_reload_121.5~5~5!2~5~A","pic":"http://home.ustc.edu.cn/~mmmwhy/GEM.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})() 作者：mmmwhy链接：http://www.jianshu.com/p/26a7fc7cc185來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 I love you forever 我爱你 pengloo53www.linux2me.com]]></content>
       <tags>
         <tag>video</tag>
       </tags>
@@ -16,8 +16,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>vps</tag>
         <tag>链接</tag>
+        <tag>vps</tag>
       </tags>
   </entry>
   <entry>
@@ -127,8 +127,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>vps</tag>
         <tag>链接</tag>
+        <tag>vps</tag>
       </tags>
   </entry>
   <entry>

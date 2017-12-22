@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>teenyda</title>
   
-  <subtitle>你要相信，比你优秀的人是不会鸟你的！</subtitle>
+  <subtitle>落花有意，流水无情！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -37,9 +37,9 @@
       <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
-    
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   
@@ -318,9 +318,9 @@
       <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
-    
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   

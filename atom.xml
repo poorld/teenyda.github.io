@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-21T02:40:53.907Z</updated>
+  <updated>2018-02-26T11:19:48.152Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mybatis之使用generator.jar 生成代码</title>
+    <link href="http://yoursite.com/-%20mybatis-generator/"/>
+    <id>http://yoursite.com/- mybatis-generator/</id>
+    <published>2018-02-26T11:19:38.813Z</published>
+    <updated>2018-02-26T11:19:48.152Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用到的jar包：<br><a href="http://oyy9gorf8.bkt.clouddn.com/mybatis-generator-core-1.3.2.jar" target="_blank" rel="external">mybatis-generator-core-1.3.2.jar</a><br><a href="http://oyy9gorf8.bkt.clouddn.com/mysql-connector-java-5.1.7-bin.jar" target="_blank" rel="external">mysql-connector-java-5.1.7-bin</a></p><p>在mysql新建一个数据库，名为test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database test;</div></pre></td></tr></table></figure></p><p>创建两个表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">create table user(</div><div class="line">id int primary key auto_increment,</div><div class="line">username varchar(20) not null,</div><div class="line">password varchar(20) not null</div><div class="line">);</div><div class="line"></div><div class="line">create table info(</div><div class="line">name varchar(20),</div><div class="line">address varchar(20),</div><div class="line">phone varchar(11)</div><div class="line">);</div></pre></td></tr></table></figure></p><p>在D盘下新建一个文件夹，名为：<span id="inline-blue">generator</span><br>,并把两个jar包放到目录下，再新建一个名为<span id="inline-blue">src</span>的文件夹.<br>新建一个generator.xml文件，如图所示！<br><img src="http://oyy9gorf8.bkt.clouddn.com/generator_directory.png" alt=""></p><p>编辑generator文件，根据注释修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE generatorConfiguration PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</div><div class="line">&lt;generatorConfiguration&gt;</div><div class="line">    &lt;!-- 数据库驱动包位置 --&gt;</div><div class="line">    &lt;classPathEntry location=&quot;E:\generator\mysql-connector-java-5.1.7-bin.jar&quot; /&gt; </div><div class="line">    &lt;!-- &lt;classPathEntry location=&quot;C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar&quot; /&gt;--&gt;</div><div class="line">    &lt;context id=&quot;DB2Tables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;</div><div class="line">        &lt;commentGenerator&gt;</div><div class="line">            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/commentGenerator&gt;</div><div class="line">        &lt;!-- 数据库链接URL、用户名、密码 --&gt;</div><div class="line">         &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot; connectionURL=&quot;jdbc:mysql://localhost:3306/test&quot; userId=&quot;root&quot; password=&quot;1108&quot;&gt; </div><div class="line">        &lt;!--&lt;jdbcConnection driverClass=&quot;oracle.jdbc.driver.OracleDriver&quot; connectionURL=&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot; userId=&quot;msa&quot; password=&quot;msa&quot;&gt;--&gt;</div><div class="line">        &lt;/jdbcConnection&gt;</div><div class="line">        &lt;javaTypeResolver&gt;</div><div class="line">            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;</div><div class="line">        &lt;/javaTypeResolver&gt;</div><div class="line">        &lt;!-- 生成实体类的包名和位置，这里配置将生成的实体类放在me.gacl.domain这个包下 --&gt;</div><div class="line">        &lt;javaModelGenerator targetPackage=&quot;me.teenyda.domain&quot; targetProject=&quot;E:\generator\src&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/javaModelGenerator&gt;</div><div class="line">        &lt;!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在me.gacl.mapping这个包下 --&gt;</div><div class="line">        &lt;sqlMapGenerator targetPackage=&quot;me.teenyda.mapping&quot; targetProject=&quot;E:\generator\src&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/sqlMapGenerator&gt;</div><div class="line">        &lt;!-- 生成DAO的包名和位置，这里配置将生成的dao类放在me.gacl.dao这个包下 --&gt;</div><div class="line">        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;me.teenyda.dao&quot; targetProject=&quot;E:\generator\src&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/javaClientGenerator&gt;</div><div class="line">        &lt;!-- 要生成那些表(更改tableName和domainObjectName就可以) --&gt;</div><div class="line">        &lt;!-- domainObjectName的参数一定要大写开头 --&gt;</div><div class="line">        &lt;table tableName=&quot;info&quot; domainObjectName=&quot;Info&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot; /&gt;</div><div class="line">&lt;table tableName=&quot;user&quot; domainObjectName=&quot;User&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot; /&gt;</div><div class="line">    &lt;/context&gt;</div><div class="line">&lt;/generatorConfiguration&gt;</div></pre></td></tr></table></figure></p><p>使用cmd命令进入e盘:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:</div><div class="line">cd generator</div></pre></td></tr></table></figure></p><p>生成代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar mybatis-generator-core-1.3.2.jar -configfile generator.xml -overwrite</div></pre></td></tr></table></figure></p><p>提示<code>MyBatis Generator finshed successfully.</code>即成功！<br><img src="http://oyy9gorf8.bkt.clouddn.com/ok.png" alt=""></p><p>出现如图所示的错误：<br><img src="http://oyy9gorf8.bkt.clouddn.com/err1.png" alt=""><br>domainObjectName的参数一定要大写开头<br><img src="http://oyy9gorf8.bkt.clouddn.com/err2.png" alt=""></p><p>最终的目录如下：<br><img src="http://oyy9gorf8.bkt.clouddn.com/generator2.png" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/generator3.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用到的jar包：&lt;br&gt;&lt;a href=&quot;http://oyy9gorf8.bkt.clouddn.com/mybatis-generator-core-1.3.2.jar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mybatis-generator
+      
+    
+    </summary>
+    
+      <category term="mybatis" scheme="http://yoursite.com/categories/mybatis/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="mybatis" scheme="http://yoursite.com/tags/mybatis/"/>
+    
+  </entry>
   
   <entry>
     <title>Java之代理模式</title>
@@ -165,9 +192,9 @@
       <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
-    
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   
@@ -421,9 +448,9 @@
       <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
-    
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
+    
+      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   

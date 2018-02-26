@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="mysql," />
+  <meta name="keywords" content="java,mybatis," />
 
 
 
@@ -82,18 +82,25 @@
 
 
 
-<meta name="description" content="123456#建立一个学生表create table student(id int not null primary key,name varchar(20) not null,address varchar(40) not null); 12345#插入数据，地址要求是：街道名 房号insert into student values(1,&amp;quot;张三&amp;quot;,&amp;quot;广职111 2">
-<meta name="keywords" content="mysql">
+<meta name="description" content="使用到的jar包：mybatis-generator-core-1.3.2.jarmysql-connector-java-5.1.7-bin 在mysql新建一个数据库，名为test1create database test; 创建两个表1234567891011create table user(id int primary key auto_increment,username varcha">
+<meta name="keywords" content="java,mybatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL之表复制与字段分列">
-<meta property="og:url" content="http://yoursite.com/- mysql之表复制与字段分列/index.html">
+<meta property="og:title" content="mybatis之使用generator.jar 生成代码">
+<meta property="og:url" content="http://yoursite.com/- mybatis-generator/index.html">
 <meta property="og:site_name" content="teenyda">
-<meta property="og:description" content="123456#建立一个学生表create table student(id int not null primary key,name varchar(20) not null,address varchar(40) not null); 12345#插入数据，地址要求是：街道名 房号insert into student values(1,&amp;quot;张三&amp;quot;,&amp;quot;广职111 2">
+<meta property="og:description" content="使用到的jar包：mybatis-generator-core-1.3.2.jarmysql-connector-java-5.1.7-bin 在mysql新建一个数据库，名为test1create database test; 创建两个表1234567891011create table user(id int primary key auto_increment,username varcha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-09T06:27:18.987Z">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/generator_directory.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/ok.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/err1.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/err2.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/generator2.png">
+<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/generator3.png">
+<meta property="og:updated_time" content="2018-02-26T11:19:48.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL之表复制与字段分列">
-<meta name="twitter:description" content="123456#建立一个学生表create table student(id int not null primary key,name varchar(20) not null,address varchar(40) not null); 12345#插入数据，地址要求是：街道名 房号insert into student values(1,&amp;quot;张三&amp;quot;,&amp;quot;广职111 2">
+<meta name="twitter:title" content="mybatis之使用generator.jar 生成代码">
+<meta name="twitter:description" content="使用到的jar包：mybatis-generator-core-1.3.2.jarmysql-connector-java-5.1.7-bin 在mysql新建一个数据库，名为test1create database test; 创建两个表1234567891011create table user(id int primary key auto_increment,username varcha">
+<meta name="twitter:image" content="http://oyy9gorf8.bkt.clouddn.com/generator_directory.png">
 
 
 
@@ -123,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/- mysql之表复制与字段分列/"/>
+  <link rel="canonical" href="http://yoursite.com/- mybatis-generator/"/>
 
 
 
 
 
-  <title>MySQL之表复制与字段分列 | teenyda</title>
+  <title>mybatis之使用generator.jar 生成代码 | teenyda</title>
   
 
 
@@ -293,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/- mysql之表复制与字段分列/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/- mybatis-generator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="teenyda">
@@ -310,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL之表复制与字段分列</h1>
+          <h1 class="post-title" itemprop="name headline">mybatis之使用generator.jar 生成代码</h1>
         
 
         <div class="post-meta">
@@ -322,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-09T14:26:56+08:00">
-                2018-01-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T19:19:38+08:00">
+                2018-02-26
               </time>
             
 
@@ -345,8 +352,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/代码/" itemprop="url" rel="index">
-                    <span itemprop="name">代码</span>
+                  <a href="/categories/mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">mybatis</span>
                   </a>
                 </span>
 
@@ -382,17 +389,18 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#建立一个学生表</div><div class="line">create table student(</div><div class="line">id int not null primary key,</div><div class="line">name varchar(20) not null,</div><div class="line">address varchar(40) not null</div><div class="line">);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#插入数据，地址要求是：街道名 房号</div><div class="line">insert into student values(1,&quot;张三&quot;,&quot;广职111 210&quot;);</div><div class="line">insert into student values(2,&quot;李四&quot;,&quot;广职111 206&quot;);</div><div class="line">insert into student values(3,&quot;王五&quot;,&quot;广职103 401&quot;);</div><div class="line">insert into student values(4,&quot;赵六&quot;,&quot;广职202 104&quot;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#查询数据</div><div class="line">select * from student;</div><div class="line">+----+--------+---------------+</div><div class="line">| id | name   | address       |</div><div class="line">+----+--------+---------------+</div><div class="line">|  1 | 张三   | 广职111 210   |</div><div class="line">|  2 | 李四   | 广职111 206   |</div><div class="line">|  3 | 王五   | 广职103 401   |</div><div class="line">|  4 | 赵六   | 广职202 104   |</div><div class="line">+----+--------+---------------+</div></pre></td></tr></table></figure>
-<p>知识点：表的复制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#复制一个与student一样的表，名为stu_info</div><div class="line">create table stu_info select * from student;</div><div class="line"></div><div class="line">#如果仅仅需要复制表的结构，可以用</div><div class="line">create table stu_info LIKE student;</div></pre></td></tr></table></figure></p>
-<p>知识点：字段分列，使用的函数：SUBSTRING_INDEX()<br>用法：</p>
-<blockquote>
-<p>SUBSTRING_INDEX（需要分列的字段，’间隔符’，间隔符前（为正）/后（为负）的第几个的字符串）</p>
-</blockquote>
-<p>在分割字段前，先新增两个字段，BuildingNumbe(楼房号)和RoomNumber(房号)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alter table stu_info ADD RoomNumber varchar(20) after address;</div><div class="line">alter table stu_info ADD BuildingNumber varchar(20) after address;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#此处用 &apos; &apos; 空格做分隔符</div><div class="line">update stu_info set BuildingNumber = SUBSTRING_INDEX(address,&apos; &apos;,1);</div><div class="line">update stu_info set RoomNumber = SUBSTRING_INDEX(address,&apos; &apos;,-1);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">mysql&gt; #查询数据</div><div class="line">mysql&gt; select * from stu_info;</div><div class="line">+----+--------+---------------+----------------+------------+</div><div class="line">| id | name   | address       | BuildingNumber | RoomNumber |</div><div class="line">+----+--------+---------------+----------------+------------+</div><div class="line">|  1 | 张三   | 广职111 210   | 广职111        | 210        |</div><div class="line">|  2 | 李四   | 广职111 206   | 广职111        | 206        |</div><div class="line">|  3 | 王五   | 广职103 401   | 广职103        | 401        |</div><div class="line">|  4 | 赵六   | 广职202 104   | 广职202        | 104        |</div><div class="line">+----+--------+---------------+----------------+------------+</div><div class="line">4 rows in set (0.00 sec)</div></pre></td></tr></table></figure>
+        <p>使用到的jar包：<br><a href="http://oyy9gorf8.bkt.clouddn.com/mybatis-generator-core-1.3.2.jar" target="_blank" rel="external">mybatis-generator-core-1.3.2.jar</a><br><a href="http://oyy9gorf8.bkt.clouddn.com/mysql-connector-java-5.1.7-bin.jar" target="_blank" rel="external">mysql-connector-java-5.1.7-bin</a></p>
+<p>在mysql新建一个数据库，名为test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database test;</div></pre></td></tr></table></figure></p>
+<p>创建两个表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">create table user(</div><div class="line">id int primary key auto_increment,</div><div class="line">username varchar(20) not null,</div><div class="line">password varchar(20) not null</div><div class="line">);</div><div class="line"></div><div class="line">create table info(</div><div class="line">name varchar(20),</div><div class="line">address varchar(20),</div><div class="line">phone varchar(11)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>在D盘下新建一个文件夹，名为：<span id="inline-blue">generator</span><br>,并把两个jar包放到目录下，再新建一个名为<span id="inline-blue">src</span>的文件夹.<br>新建一个generator.xml文件，如图所示！<br><img src="http://oyy9gorf8.bkt.clouddn.com/generator_directory.png" alt=""></p>
+<p>编辑generator文件，根据注释修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE generatorConfiguration PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</div><div class="line">&lt;generatorConfiguration&gt;</div><div class="line">    &lt;!-- 数据库驱动包位置 --&gt;</div><div class="line">    &lt;classPathEntry location=&quot;E:\generator\mysql-connector-java-5.1.7-bin.jar&quot; /&gt; </div><div class="line">    &lt;!-- &lt;classPathEntry location=&quot;C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar&quot; /&gt;--&gt;</div><div class="line">    &lt;context id=&quot;DB2Tables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;</div><div class="line">        &lt;commentGenerator&gt;</div><div class="line">            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/commentGenerator&gt;</div><div class="line">        &lt;!-- 数据库链接URL、用户名、密码 --&gt;</div><div class="line">         &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot; connectionURL=&quot;jdbc:mysql://localhost:3306/test&quot; userId=&quot;root&quot; password=&quot;1108&quot;&gt; </div><div class="line">        &lt;!--&lt;jdbcConnection driverClass=&quot;oracle.jdbc.driver.OracleDriver&quot; connectionURL=&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot; userId=&quot;msa&quot; password=&quot;msa&quot;&gt;--&gt;</div><div class="line">        &lt;/jdbcConnection&gt;</div><div class="line">        &lt;javaTypeResolver&gt;</div><div class="line">            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;</div><div class="line">        &lt;/javaTypeResolver&gt;</div><div class="line">        &lt;!-- 生成实体类的包名和位置，这里配置将生成的实体类放在me.gacl.domain这个包下 --&gt;</div><div class="line">        &lt;javaModelGenerator targetPackage=&quot;me.teenyda.domain&quot; targetProject=&quot;E:\generator\src&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/javaModelGenerator&gt;</div><div class="line">        &lt;!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在me.gacl.mapping这个包下 --&gt;</div><div class="line">        &lt;sqlMapGenerator targetPackage=&quot;me.teenyda.mapping&quot; targetProject=&quot;E:\generator\src&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/sqlMapGenerator&gt;</div><div class="line">        &lt;!-- 生成DAO的包名和位置，这里配置将生成的dao类放在me.gacl.dao这个包下 --&gt;</div><div class="line">        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;me.teenyda.dao&quot; targetProject=&quot;E:\generator\src&quot;&gt;</div><div class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;</div><div class="line">        &lt;/javaClientGenerator&gt;</div><div class="line">        &lt;!-- 要生成那些表(更改tableName和domainObjectName就可以) --&gt;</div><div class="line">        &lt;!-- domainObjectName的参数一定要大写开头 --&gt;</div><div class="line">        &lt;table tableName=&quot;info&quot; domainObjectName=&quot;Info&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot; /&gt;</div><div class="line">		&lt;table tableName=&quot;user&quot; domainObjectName=&quot;User&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot; /&gt;</div><div class="line">    &lt;/context&gt;</div><div class="line">&lt;/generatorConfiguration&gt;</div></pre></td></tr></table></figure></p>
+<p>使用cmd命令进入e盘:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:</div><div class="line">cd generator</div></pre></td></tr></table></figure></p>
+<p>生成代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar mybatis-generator-core-1.3.2.jar -configfile generator.xml -overwrite</div></pre></td></tr></table></figure></p>
+<p>提示<code>MyBatis Generator finshed successfully.</code>即成功！<br><img src="http://oyy9gorf8.bkt.clouddn.com/ok.png" alt=""></p>
+<p>出现如图所示的错误：<br><img src="http://oyy9gorf8.bkt.clouddn.com/err1.png" alt=""><br>domainObjectName的参数一定要大写开头<br><img src="http://oyy9gorf8.bkt.clouddn.com/err2.png" alt=""></p>
+<p>最终的目录如下：<br><img src="http://oyy9gorf8.bkt.clouddn.com/generator2.png" alt=""></p>
+<p><img src="http://oyy9gorf8.bkt.clouddn.com/generator3.png" alt=""></p>
+
       
     </div>
     
@@ -409,7 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/mybatis/" rel="tag"><i class="fa fa-tag"></i> mybatis</a>
           
         </div>
       
@@ -422,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/- mysql存储过程/" rel="next" title="MySQL存储过程练习">
-                <i class="fa fa-chevron-left"></i> MySQL存储过程练习
+              <a href="/- java之代理模式/" rel="next" title="Java之代理模式">
+                <i class="fa fa-chevron-left"></i> Java之代理模式
               </a>
             
           </div>
@@ -431,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/- java之代理模式/" rel="prev" title="Java之代理模式">
-                Java之代理模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

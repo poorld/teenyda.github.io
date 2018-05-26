@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-28T05:39:25.356Z</updated>
+  <updated>2018-05-26T03:45:07.608Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu16搭建java+mysql+tomcat环境</title>
+    <link href="http://yoursite.com/-%20ubuntu%E6%90%AD%E5%BB%BAtomcat/"/>
+    <id>http://yoursite.com/- ubuntu搭建tomcat/</id>
+    <published>2018-05-26T03:44:09.062Z</published>
+    <updated>2018-05-26T03:45:07.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>###1.先安装mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-server</div><div class="line"></div><div class="line">sudo apt-get install mysql-client</div><div class="line"></div><div class="line">sudo apt-get install libmysqlclient-dev</div></pre></td></tr></table></figure></p><p>查看是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo netstat -tap | grep mysql</div></pre></td></tr></table></figure></p><p>###2.安装java<br>进入<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">oracle</a>下载java</p><p>上传到服务器</p><p>解压，我放在/opt/jvm/目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo tar -zxvf jdk-8u65-linux-x64.tar.gz</div></pre></td></tr></table></figure></p><p>添加环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div><div class="line">export JAVA_HOME=/opt/jvm/jdk1.8.0_65               </div><div class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</div><div class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</div><div class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</div></pre></td></tr></table></figure></p><p>让配置生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p><p>查看java版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure></p><p>下载<a href="https://tomcat.apache.org/download-80.cgi" target="_blank" rel="external">tomcat8.0</a></p><p>上传到服务器，解压</p><p>我放在/opt/目录下</p><p>进入/opt/tomcat/bin<br>使用命令启动tomcat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ./startup.sh</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;###1.先安装mysql&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;di
+      
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="http://yoursite.com/categories/ubuntu/"/>
+    
+    
+      <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
+    
+      <category term="tomcat" scheme="http://yoursite.com/tags/tomcat/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis之使用传递多个参数</title>
@@ -495,28 +522,6 @@
       
       
         &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>测试</title>
-    <link href="http://yoursite.com/vpn/"/>
-    <id>http://yoursite.com/vpn/</id>
-    <published>2017-11-04T16:00:00.000Z</published>
-    <updated>2017-11-07T10:13:20.277Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是一篇测试文章<br>代码演示</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment"># A comment</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'hello world'</span></div></pre></td></tr></table></figure><p>这是一个访问记录地球仪<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><br><span class="sr-only">Loading…</span></p><script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5fx3g873mf4&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script><p id="div-border-top-red">下面是各个配置代码</p><p><a id="download" href="http://oyy9gorf8.bkt.clouddn.com/about_1.jpeg" target="_blank" rel="external">下载</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a id=&quot;download&quot; href=&quot;http://oyy9gorf8.bkt.clouddn.com/about_1.jpeg&quot;&gt;下载&lt;/a&gt;</div></pre></td></tr></table></figure></p><p><span id="inline-blue">颜色块-蓝</span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;inline-blue&quot;&gt;颜色块-蓝&lt;/span&gt;</div></pre></td></tr></table></figure></p><p><br><br><span id="inline-purple">颜色块-紫</span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;inline-purple&quot;&gt;颜色块-紫&lt;/span&gt;</div></pre></td></tr></table></figure></p><p><br></p><p></p><p id="div-border-left-yellow">左侧边框黄色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-yellow&quot;&gt;左侧边框黄色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-left-green">左侧边框绿色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-green&quot;&gt;左侧边框绿色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-left-blue">左侧边框蓝色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-blue&quot;&gt;左侧边框蓝色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p></p><p id="div-border-left-purple">左侧边框紫色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-left-purple&quot;&gt;左侧边框紫色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-right-red">右侧边框红色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-red&quot;&gt;右侧边框红色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p> <br></p><p></p><p id="div-border-right-yellow">右侧边框黄色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-yellow&quot;&gt;右侧边框黄色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p> <br></p><p></p><p id="div-border-right-green">右侧边框绿色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-green&quot;&gt;右侧边框绿色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p> <br></p><p></p><p id="div-border-right-blue">右侧边框蓝色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-blue&quot;&gt;右侧边框蓝色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p> <br></p><p></p><p id="div-border-right-purple">右侧边框紫色块级</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-right-purple&quot;&gt;右侧边框紫色块级&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-top-red">上侧边框红色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-red&quot;&gt;上侧边框红色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-top-yellow">上侧边框黄色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-yellow&quot;&gt;上侧边框黄色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-top-green">上侧边框绿色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-green&quot;&gt;上侧边框绿色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-top-blue">上侧边框蓝色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-blue&quot;&gt;上侧边框蓝色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p><br></p><p></p><p id="div-border-top-purple">上侧边框紫色</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;div-border-top-purple&quot;&gt;上侧边框紫色&lt;/p&gt;</div></pre></td></tr></table></figure><p></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是一篇测试文章&lt;br&gt;代码演示&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/di
       
     
     </summary>

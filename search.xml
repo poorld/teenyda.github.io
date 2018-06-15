@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用git提交代码]]></title>
+    <url>%2F-%20%E4%BD%BF%E7%94%A8git%E6%8F%90%E4%BA%A4%E5%88%B0github%2F</url>
+    <content type="text"><![CDATA[使用git要先安装Git for Windows 第一步，先在github上新建一个仓库 第二步，仓库名 创建后的仓库： 在磁盘中新建一个文件夹，把要上传的代码全部放到此文件夹中 打开Git Bash,进入到新建的文件夹 ###初始化本地仓库 1234567git initgit remote add origin git@github.com:teenyda/weParking-javaWeb.gitgit pull origin mastergit add .git commit -m &apos;first commit&apos;git push origin mastergit status 在ubuntu上安装git1sudo apt-get install git 配置用户名1ubuntu@VM-97-175-ubuntu:~$ git config --global user.name &apos;teenyda&apos; 配置邮箱1ubuntu@VM-97-175-ubuntu:~$ git config --global user.email &apos;teenyda@gmail.com&apos; 生成ssh公钥认证所需的公钥和私钥文件1ssh-keygen -C &apos;teenyda@gmail.com&apos; -t rsa 进入生成的目录123cd /home/ubuntu/.sshvi id_rsa.pub:set nonu 复制代码到github 上传代码就和什么的 初始化本地仓库 步骤一样了遇到以下问题：1234ubuntu@VM-97-175-ubuntu:~/git/eParking-javaWeb$ git pull origin masterWarning: Permanently added the RSA host key for IP address &apos;13.250.177.223&apos; to the list of known hosts.fatal: Couldn&apos;t find remote ref masterubuntu@VM-97-175-ubuntu:~/git/eParking-javaWeb$ sudi vi /etc/hosts 解决办法：1vi /etc/hosts 在最后添加一行：113.250.177.223 github.com]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu16搭建java+mysql+tomcat环境]]></title>
     <url>%2F-%20ubuntu%E6%90%AD%E5%BB%BAtomcat%2F</url>
     <content type="text"><![CDATA[###1.先安装mysql12345sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev 查看是否安装成功1sudo netstat -tap | grep mysql ###2.安装java进入oracle下载java 上传到服务器 解压，我放在/opt/jvm/目录下1sudo tar -zxvf jdk-8u65-linux-x64.tar.gz 添加环境变量12345sudo vi /etc/profileexport JAVA_HOME=/opt/jvm/jdk1.8.0_65 export JRE_HOME=$&#123;JAVA_HOME&#125;/jreexport CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATHexport PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH 让配置生效1source /etc/profile 查看java版本1java -version 下载tomcat8.0 上传到服务器，解压 我放在/opt/目录下 进入/opt/tomcat/bin使用命令启动tomcat1sudo ./startup.sh]]></content>
@@ -97,8 +109,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>链接</tag>
         <tag>vps</tag>
+        <tag>链接</tag>
       </tags>
   </entry>
   <entry>
@@ -197,8 +209,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>链接</tag>
         <tag>vps</tag>
+        <tag>链接</tag>
       </tags>
   </entry>
   <entry>

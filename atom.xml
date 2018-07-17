@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-15T01:22:54.928Z</updated>
+  <updated>2018-07-17T14:10:59.606Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#枚举练习</title>
+    <link href="http://yoursite.com/-%20C#%E6%9E%9A%E4%B8%BE/"/>
+    <id>http://yoursite.com/- C#枚举/</id>
+    <published>2018-07-17T14:10:52.067Z</published>
+    <updated>2018-07-17T14:10:59.606Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Collections.Generic;</div><div class="line">using System.Linq;</div><div class="line">using System.Text;</div><div class="line">using System.Threading.Tasks;</div><div class="line"></div><div class="line">namespace EnumTest</div><div class="line">&#123;</div><div class="line">    enum Color</div><div class="line">    &#123;</div><div class="line">        red = 1,</div><div class="line">        green = 2,</div><div class="line">        black = 3,</div><div class="line">        white = 4,</div><div class="line">    &#125;</div><div class="line">    class Program</div><div class="line">    &#123;</div><div class="line">        static void Main(string[] args)</div><div class="line">        &#123;</div><div class="line">            getEnumName(typeof(Color), &quot;red&quot;);</div><div class="line">            getEnumValue(typeof(Color), &quot;red&quot;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /// &lt;summary&gt;</div><div class="line">        /// 传入一个变量获取枚举的名称</div><div class="line">        /// &lt;/summary&gt;</div><div class="line">        static void getEnumName(Type enumType,string name)</div><div class="line">        &#123;</div><div class="line">            </div><div class="line">            if (foreachEnumHasName(enumType,name))</div><div class="line">            &#123;</div><div class="line">                //方法1：变量获取枚举的名称</div><div class="line">                Object obj = Enum.Parse(enumType, name);</div><div class="line">                Console.WriteLine(&quot;枚举名称=&quot; + obj);</div><div class="line">                Console.ReadKey();</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                Console.WriteLine(&quot;字符串&#123;0&#125; 无效&quot;, name);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /// &lt;summary&gt;</div><div class="line">        /// 传入一个变量获取枚举的值</div><div class="line">        /// &lt;/summary&gt;</div><div class="line">        /// &lt;param name=&quot;enumStr&quot;&gt;&lt;/param&gt;</div><div class="line">        static void getEnumValue(Type enumType,string enumStr) </div><div class="line">        &#123;</div><div class="line"></div><div class="line">            if (foreachEnumHasName(enumType, enumStr)) </div><div class="line">            &#123;</div><div class="line">                Color color = (Color)Enum.Parse(enumType, enumStr);</div><div class="line"></div><div class="line">                //方法1: 获取枚举的值</div><div class="line">                int colorValue1 = (int)color;</div><div class="line">                Console.WriteLine(colorValue1);</div><div class="line">                //方法2：获取枚举的值</div><div class="line">                int colorValue2 = Convert.ToInt32(color);</div><div class="line">                Console.WriteLine(colorValue2);</div><div class="line">                Console.ReadKey();</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                Console.WriteLine(&quot;字符串&#123;0&#125; 无效&quot;, enumStr);</div><div class="line">                Console.ReadKey();</div><div class="line">                return;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /// &lt;summary&gt;</div><div class="line">        /// 遍历枚举</div><div class="line">        /// &lt;/summary&gt;</div><div class="line">        static bool foreachEnumHasName(Type enumType,string name) </div><div class="line">        &#123;</div><div class="line"></div><div class="line">            foreach (string enumName in Enum.GetNames(enumType))</div><div class="line">            &#123;</div><div class="line">                if (name.Equals(enumName))</div><div class="line">                &#123;</div><div class="line">                    return true;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+      
+    
+    </summary>
+    
+      <category term="C#" scheme="http://yoursite.com/categories/C/"/>
+    
+    
+      <category term="C#" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="枚举" scheme="http://yoursite.com/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>使用git提交代码</title>
@@ -506,33 +533,6 @@
     
     
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人博客常用链接</title>
-    <link href="http://yoursite.com/-%20vps/"/>
-    <id>http://yoursite.com/- vps/</id>
-    <published>2017-11-07T13:32:34.871Z</published>
-    <updated>2017-11-07T13:32:36.065Z</updated>
-    
-    <content type="html"><![CDATA[<p></p><h1><i class="fa fa-user-circle-o" aria-hidden="true"></i>服务类</h1><br><a href="https://portal.qiniu.com/bucket/teenyda/resource" target="_blank" rel="external">七牛云</a><p></p><blockquote><p>七牛云是国内领先的企业级云服务商，专注于以数据管理为中心的云计算业务研发和运营，围绕富媒体场景推出了对象存储、融合 CDN 加速、容器计算云、大数据平台、人工智能平台等产品，并提供一站式视频云解决方案。</p></blockquote><p><br><br><a href="https://www.algolia.com/" target="_blank" rel="external">algolia</a></p><blockquote><p>Algolia是一个强大的托管搜索引擎API，为产品团队提供了创建快速相关搜索所需的资源和工具。</p></blockquote><p><br><br><a href="https://app.swiftype.com/engines/new" target="_blank" rel="external">swiftype</a></p><blockquote><p>搜索引擎</p></blockquote><p><br><br><a href="http://fontawesome.io/examples/" target="_blank" rel="external">fontawesome</a> <a href="http://fontawesome.io/examples/" target="_blank" rel="external">fontawesome中文网</a></p><blockquote><p>Font Awesome 字体为您提供可缩放矢量图标,它可以被定制大小、颜色、阴影以及任何可以用CSS的样式。支持Markdown!</p></blockquote><p><br></p><p></p><h1><i class="fa fa-ravelry" aria-hidden="true"></i>vps</h1><br><a href="http://cn.raksmart.com/" target="_blank" rel="external">raksmart</a><p></p><blockquote><p>RakSmart数据中心位于美国加州，中国访问速度快，稳定性好，其冗余性能确保了RakSmart国外服务器正常在线时间和快速的访问。</p></blockquote><p><img src="http://oyy9gorf8.bkt.clouddn.com/raksmart.png" alt="此处输入图片的描述"><br><span id="inline-blue">ping值</span><br><img src="http://oyy9gorf8.bkt.clouddn.com/ping_raksmart.png" alt="此处输入图片的描述"></p><p><br><br><a href="https://manage.hostdare.com/index.php?language=chinese" target="_blank" rel="external">hostdare</a></p><blockquote><p>服务器便宜，最低2.99刀，配置不错，而且还可以微信支付</p></blockquote><p><img src="http://oyy9gorf8.bkt.clouddn.com/hostdare.png" alt="此处输入图片的描述"><br><span id="inline-blue">ping值</span><br><img src="http://oyy9gorf8.bkt.clouddn.com/ping_hostdart.png" alt="此处输入图片的描述"></p><p><br><br><a href="https://www.somagu.com/vps/create/1" target="_blank" rel="external">somagu</a></p><blockquote><p>一家韩国的服务器！按小时计费，一个月2.59刀</p></blockquote><p><img src="http://oyy9gorf8.bkt.clouddn.com/somagu.png" alt="此处输入图片的描述"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;/p&gt;&lt;h1&gt;&lt;i class=&quot;fa fa-user-circle-o&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;服务类&lt;/h1&gt;&lt;br&gt;&lt;a href=&quot;https://portal.qiniu.com/bucket/teenyda/resource&quot; targ
-      
-    
-    </summary>
-    
-      <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
-    
-      <category term="链接" scheme="http://yoursite.com/tags/%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   

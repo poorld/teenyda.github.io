@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-17T14:21:45.968Z</updated>
+  <updated>2018-07-29T07:41:04.020Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android对话框</title>
+    <link href="http://yoursite.com/-%20android-dialog/"/>
+    <id>http://yoursite.com/- android-dialog/</id>
+    <published>2018-07-29T07:40:51.323Z</published>
+    <updated>2018-07-29T07:41:04.020Z</updated>
+    
+    <content type="html"><![CDATA[<p>演示：<br><img src="http://oyy9gorf8.bkt.clouddn.com/ezgif.com-video-to-gif%20%283%29.gif" alt=""></p><p>显示一个简单的对话框:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">builder = new AlertDialog.Builder(this);</div><div class="line">builder.setIcon(R.drawable.icon);</div><div class="line">builder.setTitle(&quot;提示&quot;);</div><div class="line">builder.setMessage(&quot;这是一个简单的提示框&quot;);</div><div class="line">builder.setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">    @Override</div><div class="line">    public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line">        Toast.makeText(getApplicationContext(), R.string.toast_postive, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">    @Override</div><div class="line">    public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line">        Toast.makeText(getApplicationContext(), R.string.toast_negative, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">//设置对话框可取消</div><div class="line">builder.setCancelable(true);</div><div class="line">AlertDialog dialog = builder.create();</div><div class="line">dialog.show();</div></pre></td></tr></table></figure></p><p>项目地址:<br><a href="https://github.com/teenyda/android_dialog" target="_blank" rel="external">android_dialog_Test</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;演示：&lt;br&gt;&lt;img src=&quot;http://oyy9gorf8.bkt.clouddn.com/ezgif.com-video-to-gif%20%283%29.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;显示一个简单的对话框:&lt;br&gt;&lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>C#枚举练习</title>
@@ -506,33 +532,6 @@
     
     
       <category term="论坛" scheme="http://yoursite.com/tags/%E8%AE%BA%E5%9D%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vps常用命令</title>
-    <link href="http://yoursite.com/-%20vps%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/- vps常用命令/</id>
-    <published>2017-11-11T11:46:11.005Z</published>
-    <updated>2017-11-11T11:46:13.509Z</updated>
-    
-    <content type="html"><![CDATA[<p>#锐速3.10.61.0版命令</p><blockquote><p>启动：service serverSpeeder start<br>停止: service serverSpeeder stop<br>重新加载配置: service serverSpeeder reload<br>重启: service serverSpeeder restart<br>状态: service serverSpeeder status<br>统计: service serverSpeeder stats<br>卸载: chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh unstall -f</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;#锐速3.10.61.0版命令&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;启动：service serverSpeeder start&lt;br&gt;停止: service serverSpeeder stop&lt;br&gt;重新加载配置: service serverSpeeder rel
-      
-    
-    </summary>
-    
-      <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
     
   </entry>
   

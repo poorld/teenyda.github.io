@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[android对话框]]></title>
+    <url>%2F-%20android-dialog%2F</url>
+    <content type="text"><![CDATA[演示： 显示一个简单的对话框:1234567891011121314151617181920builder = new AlertDialog.Builder(this);builder.setIcon(R.drawable.icon);builder.setTitle(&quot;提示&quot;);builder.setMessage(&quot;这是一个简单的提示框&quot;);builder.setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener() &#123; @Override public void onClick(DialogInterface dialog, int which) &#123; Toast.makeText(getApplicationContext(), R.string.toast_postive, Toast.LENGTH_SHORT).show(); &#125;&#125;);builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123; @Override public void onClick(DialogInterface dialog, int which) &#123; Toast.makeText(getApplicationContext(), R.string.toast_negative, Toast.LENGTH_SHORT).show(); &#125;&#125;);//设置对话框可取消builder.setCancelable(true);AlertDialog dialog = builder.create();dialog.show(); 项目地址:android_dialog_Test]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C#枚举练习]]></title>
     <url>%2F-%20C%20Sharp%E6%9E%9A%E4%B8%BE%2F</url>
     <content type="text"><![CDATA[C#枚举练习:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Threading.Tasks;namespace EnumTest&#123; enum Color &#123; red = 1, green = 2, black = 3, white = 4, &#125; class Program &#123; static void Main(string[] args) &#123; getEnumName(typeof(Color), &quot;red&quot;); getEnumValue(typeof(Color), &quot;red&quot;); &#125; /// &lt;summary&gt; /// 传入一个变量获取枚举的名称 /// &lt;/summary&gt; static void getEnumName(Type enumType,string name) &#123; if (foreachEnumHasName(enumType,name)) &#123; //方法1：变量获取枚举的名称 Object obj = Enum.Parse(enumType, name); Console.WriteLine(&quot;枚举名称=&quot; + obj); Console.ReadKey(); &#125; else &#123; Console.WriteLine(&quot;字符串&#123;0&#125; 无效&quot;, name); &#125; &#125; /// &lt;summary&gt; /// 传入一个变量获取枚举的值 /// &lt;/summary&gt; /// &lt;param name=&quot;enumStr&quot;&gt;&lt;/param&gt; static void getEnumValue(Type enumType,string enumStr) &#123; if (foreachEnumHasName(enumType, enumStr)) &#123; Color color = (Color)Enum.Parse(enumType, enumStr); //方法1: 获取枚举的值 int colorValue1 = (int)color; Console.WriteLine(colorValue1); //方法2：获取枚举的值 int colorValue2 = Convert.ToInt32(color); Console.WriteLine(colorValue2); Console.ReadKey(); &#125; else &#123; Console.WriteLine(&quot;字符串&#123;0&#125; 无效&quot;, enumStr); Console.ReadKey(); return; &#125; &#125; /// &lt;summary&gt; /// 遍历枚举 /// &lt;/summary&gt; static bool foreachEnumHasName(Type enumType,string name) &#123; foreach (string enumName in Enum.GetNames(enumType)) &#123; if (name.Equals(enumName)) &#123; return true; &#125; &#125; return false; &#125; &#125;&#125;]]></content>

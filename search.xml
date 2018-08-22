@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vue.js axios post发送数据后端接收不到数据]]></title>
+    <url>%2F-%20vue.js%20axios%E4%B9%8Bpost%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%2F</url>
+    <content type="text"><![CDATA[方法一:1234var params = new URLSearchParams();params.append(&apos;key1&apos;, &apos;value1&apos;);params.append(&apos;key2&apos;, &apos;value2&apos;);params.append(&apos;key3&apos;, &apos;value3&apos;); 然后把params传过去，但是兼容性不好 方法二: 使用qs在main.js引入12import qs from &apos;qs&apos;Vue.prototype.$qs = qs 在组件中使用:123456789//create为对象let postData = this.$qs.stringify(this.create)//或者let postData = this.$qs.stringify(&#123; key1: value1, key2: value2, key3: value3&#125;) 然后把postData传过去 测试使用JSON.stringify()不行]]></content>
+      <categories>
+        <category>vue.js</category>
+        <category>axios</category>
+      </categories>
+      <tags>
+        <tag>vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[javaWeb跨域问题]]></title>
     <url>%2F-%20javaWeb%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[vue请求错误:Response to preflight request doesn’t pass access control check: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘http://localhost:9000‘ is therefore not allowed access. The response had HTTP status code 403 解决:使用CORS实现跨域请求Servlet配置:1.新建CORSFilter类，并实现Filter接口123456789101112131415161718192021222324252627282930313233343536373839package com.teenyda.controller;import java.io.IOException;import javax.servlet.Filter;import javax.servlet.FilterChain;import javax.servlet.FilterConfig;import javax.servlet.ServletException;import javax.servlet.ServletRequest;import javax.servlet.ServletResponse;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.HttpServletResponse;public class CORSFilter implements Filter&#123; @Override public void destroy() &#123;&#125; @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException &#123; HttpServletResponse response = (HttpServletResponse) servletResponse; HttpServletRequest request = (HttpServletRequest) servletRequest; // 指定允许其他域名访问 response.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;); // 响应类型 response.setHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;POST, GET, DELETE, OPTIONS, DELETE&quot;); // 响应头设置 response.setHeader(&quot;Access-Control-Allow-Headers&quot;, &quot;Content-Type, x-requested-with, X-Custom-Header, HaiYi-Access-Token&quot;); if (&quot;OPTIONS&quot;.equals(request.getMethod()))&#123; response.setStatus(200); &#125; chain.doFilter(servletRequest, servletResponse); &#125; @Override public void init(FilterConfig arg0) throws ServletException &#123;&#125;&#125; 2.web.xml配置:123456789&lt;filter&gt; &lt;filter-name&gt;CORSFilter&lt;/filter-name&gt; &lt;filter-class&gt;com.teenyda.controller.CORSFilter&lt;/filter-class&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;CORSFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; SpringMVC配置:新建ProcessInterceptor类，并实现HandlerInterceptor接口1234567891011121314151617181920212223242526272829303132333435363738package com.teenyda.controller;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.HttpServletResponse;import org.springframework.web.servlet.HandlerInterceptor;import org.springframework.web.servlet.ModelAndView;public class ProcessInterceptor implements HandlerInterceptor&#123; @Override public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object obj) throws Exception &#123; httpServletResponse.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;); httpServletResponse.setHeader(&quot;Access-Control-Allow-Headers&quot;, &quot;Content-Type,Content-Length, Authorization, Accept,X-Requested-With&quot;); httpServletResponse.setHeader(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;); httpServletResponse.setHeader(&quot;X-Powered-By&quot;,&quot;Jetty&quot;); String method = httpServletRequest.getMethod(); if (method.equals(&quot;OPTIONS&quot;))&#123; httpServletResponse.setStatus(200); return false; &#125; System.out.println(method); return true; &#125; @Override public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3) throws Exception &#123; &#125; @Override public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3) throws Exception &#123; &#125;&#125; 配置spring:12345&lt;mvc:interceptors&gt; &lt;bean class=&quot;com.teenyda.controller.ProcessInterceptor&quot;&gt;&lt;/bean&gt;&lt;/mvc:interceptors&gt;&lt;bean class=&quot;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&quot;/&gt;]]></content>
@@ -144,8 +156,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>链接</tag>
         <tag>vps</tag>
+        <tag>链接</tag>
       </tags>
   </entry>
   <entry>
@@ -244,8 +256,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>链接</tag>
         <tag>vps</tag>
+        <tag>链接</tag>
       </tags>
   </entry>
   <entry>

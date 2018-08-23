@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ubuntu16搭建java+mysql+tomcat环境]]></title>
+    <url>%2F-%20ubuntu16%E6%90%AD%E5%BB%BAjava%2Bmysql%2Btomcat%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[###1.先安装mysql12345sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev 查看是否安装成功1sudo netstat -tap | grep mysql ###2.安装java进入oracle下载java,我使用的是jdk-8u161-linux-x64 上传到服务器 解压，我放在/opt/jvm/目录下1sudo tar -zxvf jdk-8u65-linux-x64.tar.gz 解压到指定目录可以用:1sudo tar -zxvf jdk-8u65-linux-x64.tar.gz -C /opt/jvm/ 添加环境变量12345sudo vi /etc/profileexport JAVA_HOME=/opt/jvm/jdk1.8.0_65 export JRE_HOME=$&#123;JAVA_HOME&#125;/jreexport CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATHexport PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH 让配置生效1source /etc/profile 查看java版本1java -version 下载tomcat8.0 上传到服务器，解压 我放在/opt/目录下 进入/opt/tomcat/bin使用命令启动tomcat1sudo ./startup.sh 如果启动时出错:123ubuntu@VM-97-175-ubuntu:/usr/tomcat/apache-tomcat-8.5.27/bin$ sudo ./startup.shNeither the JAVA_HOME nor the JRE_HOME environment variable is definedAt least one of these environment variable is needed to run this program 进入tomcat的bin目录,编辑catalina.sh文件,在正文开头前，加上12export JAVA_HOME=/opt/jvm/jdk1.8.0_65export JRE_HOME=/opt/jvm/jdk1.8.0_65/jre 这里要与你的java所在目录对应]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用git提交代码到github]]></title>
+    <url>%2F-%20%E4%BD%BF%E7%94%A8git%E6%8F%90%E4%BA%A4%E5%88%B0github%2F</url>
+    <content type="text"><![CDATA[安装在window上安装git，到Git for Windows下载，一路确认安装完毕 在ubuntu上安装git1sudo apt-get install git 配置用户名1ubuntu@VM-97-175-ubuntu:~$ git config --global user.name &apos;teenyda&apos; 配置邮箱1ubuntu@VM-97-175-ubuntu:~$ git config --global user.email &apos;teenyda@gmail.com&apos; 生成ssh公钥认证所需的公钥和私钥文件1ssh-keygen -C &apos;teenyda@gmail.com&apos; -t rsa 进入生成的目录123cd /home/ubuntu/.sshvi id_rsa.pub:set nonu 复制代码到github 上传代码就上面的 初始化本地仓库 步骤一样了遇到以下问题：1234ubuntu@VM-97-175-ubuntu:~/git/eParking-javaWeb$ git pull origin masterWarning: Permanently added the RSA host key for IP address &apos;13.250.177.223&apos; to the list of known hosts.fatal: Couldn&apos;t find remote ref masterubuntu@VM-97-175-ubuntu:~/git/eParking-javaWeb$ sudi vi /etc/hosts 解决办法：1vi /etc/hosts 在最后添加一行：113.250.177.223 github.com 把代码上传到githtb第一步，先在github上新建一个仓库 第二步，仓库名 创建后的仓库： 在磁盘中新建一个文件夹，把要上传的代码全部放到此文件夹中 打开Git Bash,进入到新建的文件夹 初始化本地仓库…….123456git initgit remote add origin git@github.com:teenyda/weParking-javaWeb.gitgit add .git commit -m &apos;first commit&apos;git push origin mastergit status]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vue.js axios post发送数据后端接收不到数据]]></title>
     <url>%2F-%20vue.js%20axios%E4%B9%8Bpost%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[方法一:1234var params = new URLSearchParams();params.append(&apos;key1&apos;, &apos;value1&apos;);params.append(&apos;key2&apos;, &apos;value2&apos;);params.append(&apos;key3&apos;, &apos;value3&apos;); 然后把params传过去，但是兼容性不好 方法二: 使用qs在main.js引入12import qs from &apos;qs&apos;Vue.prototype.$qs = qs 在组件中使用:123456789//create为对象let postData = this.$qs.stringify(this.create)//或者let postData = this.$qs.stringify(&#123; key1: value1, key2: value2, key3: value3&#125;) 然后把postData传过去 测试使用JSON.stringify()不行]]></content>
@@ -45,30 +69,6 @@
       <tags>
         <tag>C#</tag>
         <tag>枚举</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[使用git提交代码]]></title>
-    <url>%2F-%20%E4%BD%BF%E7%94%A8git%E6%8F%90%E4%BA%A4%E5%88%B0github%2F</url>
-    <content type="text"><![CDATA[使用git要先安装Git for Windows 第一步，先在github上新建一个仓库 第二步，仓库名 创建后的仓库： 在磁盘中新建一个文件夹，把要上传的代码全部放到此文件夹中 打开Git Bash,进入到新建的文件夹 初始化本地仓库 1234567git initgit remote add origin git@github.com:teenyda/weParking-javaWeb.gitgit pull origin mastergit add .git commit -m &apos;first commit&apos;git push origin mastergit status 在ubuntu上安装git1sudo apt-get install git 配置用户名1ubuntu@VM-97-175-ubuntu:~$ git config --global user.name &apos;teenyda&apos; 配置邮箱1ubuntu@VM-97-175-ubuntu:~$ git config --global user.email &apos;teenyda@gmail.com&apos; 生成ssh公钥认证所需的公钥和私钥文件1ssh-keygen -C &apos;teenyda@gmail.com&apos; -t rsa 进入生成的目录123cd /home/ubuntu/.sshvi id_rsa.pub:set nonu 复制代码到github 上传代码就上面的 初始化本地仓库 步骤一样了遇到以下问题：1234ubuntu@VM-97-175-ubuntu:~/git/eParking-javaWeb$ git pull origin masterWarning: Permanently added the RSA host key for IP address &apos;13.250.177.223&apos; to the list of known hosts.fatal: Couldn&apos;t find remote ref masterubuntu@VM-97-175-ubuntu:~/git/eParking-javaWeb$ sudi vi /etc/hosts 解决办法：1vi /etc/hosts 在最后添加一行：113.250.177.223 github.com]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ubuntu16搭建java+mysql+tomcat环境]]></title>
-    <url>%2F-%20ubuntu%E6%90%AD%E5%BB%BAtomcat%2F</url>
-    <content type="text"><![CDATA[###1.先安装mysql12345sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev 查看是否安装成功1sudo netstat -tap | grep mysql ###2.安装java进入oracle下载java 上传到服务器 解压，我放在/opt/jvm/目录下1sudo tar -zxvf jdk-8u65-linux-x64.tar.gz 添加环境变量12345sudo vi /etc/profileexport JAVA_HOME=/opt/jvm/jdk1.8.0_65 export JRE_HOME=$&#123;JAVA_HOME&#125;/jreexport CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATHexport PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH 让配置生效1source /etc/profile 查看java版本1java -version 下载tomcat8.0 上传到服务器，解压 我放在/opt/目录下 进入/opt/tomcat/bin使用命令启动tomcat1sudo ./startup.sh]]></content>
-      <categories>
-        <category>ubuntu</category>
-      </categories>
-      <tags>
-        <tag>ubuntu</tag>
-        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -156,8 +156,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>vps</tag>
         <tag>链接</tag>
+        <tag>vps</tag>
       </tags>
   </entry>
   <entry>
@@ -256,8 +256,8 @@
         <category>实用技术</category>
       </categories>
       <tags>
-        <tag>vps</tag>
         <tag>链接</tag>
+        <tag>vps</tag>
       </tags>
   </entry>
   <entry>

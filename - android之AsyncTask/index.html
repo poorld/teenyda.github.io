@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="mysql," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -82,28 +82,18 @@
 
 
 
-<meta name="description" content="有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）： 查看test表的结构1show create database test;  改变test表的编码方式:1alter database test default character set utf8 collate utf8_bin; 这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码1show">
-<meta name="keywords" content="mysql">
+<meta name="description" content="使用AsyncTask异步加载图片为了方便在子线程中对UI进行操作，Android提供了一些好用的工具类，AsyncTask就是其中之一。借助AsyncTAsk，可以十分简单的从子线程切换到主线程，它的原理也是基于异步消息处理机制的。 AsyncTask是一个抽象类，因此使用它必须创建一个类去继承它。123class MyAsyncTask extends AsyncTask&amp;lt;Void,In">
+<meta name="keywords" content="android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL解决中文乱码问题">
-<meta property="og:url" content="http://yoursite.com/- mysql中文乱码/index.html">
+<meta property="og:title" content="android之AsyncTask">
+<meta property="og:url" content="http://yoursite.com/- android之AsyncTask/index.html">
 <meta property="og:site_name" content="teenyda">
-<meta property="og:description" content="有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）： 查看test表的结构1show create database test;  改变test表的编码方式:1alter database test default character set utf8 collate utf8_bin; 这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码1show">
+<meta property="og:description" content="使用AsyncTask异步加载图片为了方便在子线程中对UI进行操作，Android提供了一些好用的工具类，AsyncTask就是其中之一。借助AsyncTAsk，可以十分简单的从子线程切换到主线程，它的原理也是基于异步消息处理机制的。 AsyncTask是一个抽象类，因此使用它必须创建一个类去继承它。123class MyAsyncTask extends AsyncTask&amp;lt;Void,In">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_1.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_2.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_3.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_4.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_5.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_6.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_7.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_9.PNG">
-<meta property="og:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_8.PNG">
-<meta property="og:updated_time" content="2017-12-08T09:33:12.615Z">
+<meta property="og:updated_time" content="2018-09-27T08:07:21.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL解决中文乱码问题">
-<meta name="twitter:description" content="有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况（以test表为例）： 查看test表的结构1show create database test;  改变test表的编码方式:1alter database test default character set utf8 collate utf8_bin; 这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码1show">
-<meta name="twitter:image" content="http://oyy9gorf8.bkt.clouddn.com/mysql_1.PNG">
+<meta name="twitter:title" content="android之AsyncTask">
+<meta name="twitter:description" content="使用AsyncTask异步加载图片为了方便在子线程中对UI进行操作，Android提供了一些好用的工具类，AsyncTask就是其中之一。借助AsyncTAsk，可以十分简单的从子线程切换到主线程，它的原理也是基于异步消息处理机制的。 AsyncTask是一个抽象类，因此使用它必须创建一个类去继承它。123class MyAsyncTask extends AsyncTask&amp;lt;Void,In">
 
 
 
@@ -133,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/- mysql中文乱码/"/>
+  <link rel="canonical" href="http://yoursite.com/- android之AsyncTask/"/>
 
 
 
 
 
-  <title>MySQL解决中文乱码问题 | teenyda</title>
+  <title>android之AsyncTask | teenyda</title>
   
 
 
@@ -303,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/- mysql中文乱码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/- android之AsyncTask/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="teenyda">
@@ -320,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL解决中文乱码问题</h1>
+          <h1 class="post-title" itemprop="name headline">android之AsyncTask</h1>
         
 
         <div class="post-meta">
@@ -332,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-08T17:33:08+08:00">
-                2017-12-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T13:22:16+08:00">
+                2017-11-19
               </time>
             
 
@@ -342,6 +332,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -370,26 +382,12 @@
       
 
       
-        <p>有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>（以test表为例）：<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_1.PNG" alt=""></p>
-<p>查看test表的结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show create database test;</div></pre></td></tr></table></figure></p>
-<p><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_2.PNG" alt=""></p>
-<p>改变test表的编码方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter database test default character set utf8 collate utf8_bin;</div></pre></td></tr></table></figure></p>
-<p>这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码<i class="fa fa-file-text" aria-hidden="true"></i><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show variables like &apos;%char%&apos;;</div></pre></td></tr></table></figure></p>
-<p><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_3.PNG" alt=""></p>
-<p>我们把character_set_client、character_set_connection、character_set_database、character_set_server都设为utf8<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">set character_set_client=utf8;</div><div class="line">set character_set_connection=utf8;</div><div class="line">set character_set_database=utf8;</div><div class="line">set character_set_server=utf8;</div></pre></td></tr></table></figure></p>
-<p>查看编码<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_4.PNG" alt=""></p>
-<p>如果原来的表不可以插入中文的话，可以重建一张表<i class="fa fa-hand-o-right" aria-hidden="true"></i>；<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_5.PNG" alt=""></p>
-<p>但是还有一个问题没有解决，就是重新打开数据库时，数据库编码又变回来了。<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_6.PNG" alt=""></p>
-<p>这时，我们要从根本上解决问题–&gt;修改mysql的配置文件</p>
-<p>查看mysql默认读取my.cnf的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql --help | grep my.cnf</div></pre></td></tr></table></figure></p>
-<p>输出如下：<br>ubuntu@localhost:/etc/mysql$ mysql –help | grep my.cnf<br>                      order of preference, my.cnf, $MYSQL_TCP_PORT,<br>/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf</p>
-<p>我们进入到/etc/mysql/目录下，查看my.cnf文件。发现my.cnf的文件是这样的。<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_7.PNG" alt=""><br>我们发现，这里面并没有看见相关的配置，瞬间懵逼！因为我们平时看到的是这个样子的<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_9.PNG" alt=""></p>
-<p>没关系！我们直接修改，插入下面的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line">character-set-server=utf8</div><div class="line"></div><div class="line">[client]</div><div class="line">default-character-set=utf8</div><div class="line"></div><div class="line">[mysql]</div><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p>
-<p>重启数据库（ubuntu 16）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/mysql restart</div></pre></td></tr></table></figure></p>
-<p>ubuntu14执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql restart</div></pre></td></tr></table></figure></p>
-<p>这时候查看编码方式：<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_8.PNG" alt=""></p>
-<p>大功告成！<i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i></p>
-<p>参考：<a href="http://blog.csdn.net/u012410733/article/details/61619656" target="_blank" rel="external">http://blog.csdn.net/u012410733/article/details/61619656</a></p>
+        <h2 id="使用AsyncTask异步加载图片"><a href="#使用AsyncTask异步加载图片" class="headerlink" title="使用AsyncTask异步加载图片"></a>使用AsyncTask异步加载图片</h2><p>为了方便在子线程中对UI进行操作，Android提供了一些好用的工具类，AsyncTask就是其中之一。借助AsyncTAsk，可以十分简单的从子线程切换到主线程，它的原理也是基于异步消息处理机制的。</p>
+<p>AsyncTask是一个抽象类，因此使用它必须创建一个类去继承它。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class MyAsyncTask extends AsyncTask&lt;Void,Integer,Bitmap&gt; &#123;</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第一个参数在执行AsyncTask时需要传入的参数,如果是Void类型，表示在执行AsyncTask时，不需要传递参数给后台</p>
+<h3 id="MainActivity"><a href="#MainActivity" class="headerlink" title="MainActivity"></a>MainActivity</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div></pre></td><td class="code"><pre><div class="line">package com.teenyda.asynctask;</div><div class="line"></div><div class="line">import android.graphics.Bitmap;</div><div class="line">import android.graphics.BitmapFactory;</div><div class="line">import android.os.AsyncTask;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.view.View;</div><div class="line">import android.widget.Button;</div><div class="line">import android.widget.EditText;</div><div class="line">import android.widget.ImageView;</div><div class="line">import android.widget.ProgressBar;</div><div class="line"></div><div class="line">import java.io.ByteArrayOutputStream;</div><div class="line">import java.io.IOException;</div><div class="line">import java.io.InputStream;</div><div class="line">import java.net.HttpURLConnection;</div><div class="line">import java.net.URL;</div><div class="line"></div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line">    private Button btnLoadImage;</div><div class="line">    private ImageView imageView;</div><div class="line">    private ProgressBar progressBar;</div><div class="line">    private EditText etUrl;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        btnLoadImage = (Button) findViewById(R.id.btn_load);</div><div class="line">        imageView = (ImageView) findViewById(R.id.imageView);</div><div class="line">        progressBar = (ProgressBar) findViewById(R.id.progressBar);</div><div class="line">        etUrl = (EditText) findViewById(R.id.et_url);</div><div class="line">        imageView.setVisibility(View.GONE);</div><div class="line">        progressBar.setVisibility(View.GONE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void loadImage(View view) &#123;</div><div class="line">        String url = etUrl.getText().toString();</div><div class="line">        if (!url.isEmpty()) &#123;</div><div class="line">            new LoadImageTask().execute(url);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void clear(View v) &#123;</div><div class="line">        imageView.setVisibility(View.GONE);</div><div class="line">        etUrl.setText(&quot;&quot;);</div><div class="line">        etUrl.setVisibility(View.VISIBLE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    class LoadImageTask extends AsyncTask&lt;String,Integer,Bitmap&gt;&#123;</div><div class="line">        // 是否设置了进度的最大值</div><div class="line">        private boolean setProgressMax = false;</div><div class="line"></div><div class="line">        /**</div><div class="line">         * 在执行之前调用,一般用于初始化界面</div><div class="line">         */</div><div class="line">        @Override</div><div class="line">        protected void onPreExecute() &#123;</div><div class="line">            super.onPreExecute();</div><div class="line">            //显示进度条</div><div class="line">            progressBar.setVisibility(View.VISIBLE);</div><div class="line">            //隐藏输入框</div><div class="line">            etUrl.setVisibility(View.GONE);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /**</div><div class="line">         * 在子线程中运行，用于处理耗时操作</div><div class="line">         * @param params</div><div class="line">         * @return</div><div class="line">         */</div><div class="line">        @Override</div><div class="line">        protected Bitmap doInBackground(String... params) &#123;</div><div class="line">            HttpURLConnection conn  = null;</div><div class="line">            Bitmap bitmap = null;</div><div class="line">            try &#123;</div><div class="line">                conn = (HttpURLConnection) new URL(params[0]).openConnection();</div><div class="line">                int responseCode = conn.getResponseCode();</div><div class="line">                if (responseCode == HttpURLConnection.HTTP_OK) &#123;</div><div class="line">                    int max = conn.getContentLength();</div><div class="line">                    publishProgress(max);</div><div class="line">                    InputStream is = conn.getInputStream();</div><div class="line">                    ByteArrayOutputStream bos = new ByteArrayOutputStream();</div><div class="line">                    int len = 0;</div><div class="line">                    int total = 0;</div><div class="line">                    byte[] buff = new byte[1024];</div><div class="line">                    while ((len = is.read(buff)) != -1) &#123;</div><div class="line">                        bos.write(buff,0,len);</div><div class="line">                        total+=len;</div><div class="line">                        // 更新进度条</div><div class="line">                        publishProgress(total);</div><div class="line">                    &#125;</div><div class="line">                    bitmap = BitmapFactory.decodeByteArray(bos.toByteArray(), 0, bos.size());</div><div class="line">                &#125;</div><div class="line">            &#125; catch (IOException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125; finally &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">            return bitmap;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /**</div><div class="line">         * 在doInBackground()方法中调用了publishProgress()方法，这个方法就会被调用</div><div class="line">         * 方法中携带的参数就是后台任务中传递过来的</div><div class="line">         * 这个方法可以对UI进行操作</div><div class="line">         * @param values</div><div class="line">         */</div><div class="line">        @Override</div><div class="line">        protected void onProgressUpdate(Integer... values) &#123;</div><div class="line">            super.onProgressUpdate(values);</div><div class="line">            if (setProgressMax) &#123;</div><div class="line">                progressBar.setProgress(values[0]);</div><div class="line">            &#125; else &#123;</div><div class="line">                progressBar.setMax(values[0]);</div><div class="line">                setProgressMax = true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /**</div><div class="line">         * doInBackground执行完毕，这个方法就会被调用,doInBackground()返回的参数也会传递到该方法中</div><div class="line">         * @param bitmap</div><div class="line">         */</div><div class="line">        @Override</div><div class="line">        protected void onPostExecute(Bitmap bitmap) &#123;</div><div class="line">            super.onPostExecute(bitmap);</div><div class="line">            if (bitmap != null) &#123;</div><div class="line">                imageView.setImageBitmap(bitmap);</div><div class="line">                imageView.setVisibility(View.VISIBLE);</div><div class="line">                progressBar.setVisibility(View.GONE);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;android.support.constraint.ConstraintLayout</div><div class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</div><div class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    tools:context=&quot;com.teenyda.asynctask.MainActivity&quot;&gt;</div><div class="line"></div><div class="line">    &lt;Button</div><div class="line">        android:id=&quot;@+id/btn_load&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:text=&quot;加载图片&quot;</div><div class="line">        android:onClick=&quot;loadImage&quot;</div><div class="line">        android:layout_marginLeft=&quot;8dp&quot;</div><div class="line">        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;</div><div class="line">        android:layout_marginRight=&quot;8dp&quot;</div><div class="line">        app:layout_constraintRight_toRightOf=&quot;parent&quot;</div><div class="line">        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;</div><div class="line">        android:layout_marginBottom=&quot;100dp&quot;</div><div class="line">        android:layout_marginStart=&quot;8dp&quot;</div><div class="line">        android:layout_marginEnd=&quot;8dp&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;ImageView</div><div class="line">        android:id=&quot;@+id/imageView&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_marginLeft=&quot;8dp&quot;</div><div class="line">        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;</div><div class="line">        android:layout_marginRight=&quot;8dp&quot;</div><div class="line">        app:layout_constraintRight_toRightOf=&quot;parent&quot;</div><div class="line">        app:layout_constraintTop_toTopOf=&quot;parent&quot;</div><div class="line">        android:layout_marginTop=&quot;16dp&quot;</div><div class="line">        android:layout_marginStart=&quot;8dp&quot;</div><div class="line">        android:layout_marginEnd=&quot;8dp&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;ProgressBar</div><div class="line">        android:id=&quot;@+id/progressBar&quot;</div><div class="line">        style=&quot;?android:attr/progressBarStyleHorizontal&quot;</div><div class="line">        android:layout_width=&quot;0dp&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_marginRight=&quot;8dp&quot;</div><div class="line">        app:layout_constraintRight_toRightOf=&quot;parent&quot;</div><div class="line">        android:layout_marginLeft=&quot;8dp&quot;</div><div class="line">        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;</div><div class="line">        android:layout_marginBottom=&quot;144dp&quot;</div><div class="line">        app:layout_constraintBottom_toTopOf=&quot;@+id/btn_load&quot;</div><div class="line">        android:layout_marginStart=&quot;8dp&quot;</div><div class="line">        android:layout_marginEnd=&quot;8dp&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;EditText</div><div class="line">        android:id=&quot;@+id/et_url&quot;</div><div class="line">        android:layout_width=&quot;0dp&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:ems=&quot;10&quot;</div><div class="line">        android:inputType=&quot;textPersonName&quot;</div><div class="line">        android:hint=&quot;图片地址&quot;</div><div class="line">        android:layout_marginLeft=&quot;8dp&quot;</div><div class="line">        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;</div><div class="line">        android:layout_marginRight=&quot;8dp&quot;</div><div class="line">        app:layout_constraintRight_toRightOf=&quot;parent&quot;</div><div class="line">        app:layout_constraintTop_toTopOf=&quot;parent&quot;</div><div class="line">        android:layout_marginTop=&quot;16dp&quot;</div><div class="line">        app:layout_constraintHorizontal_bias=&quot;0.503&quot;</div><div class="line">        android:layout_marginStart=&quot;8dp&quot;</div><div class="line">        android:layout_marginEnd=&quot;8dp&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;Button</div><div class="line">        android:id=&quot;@+id/button2&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:text=&quot;清除&quot;</div><div class="line">        android:layout_marginLeft=&quot;8dp&quot;</div><div class="line">        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;</div><div class="line">        android:layout_marginRight=&quot;8dp&quot;</div><div class="line">        app:layout_constraintRight_toRightOf=&quot;parent&quot;</div><div class="line">        android:layout_marginTop=&quot;8dp&quot;</div><div class="line">        android:onClick=&quot;clear&quot;</div><div class="line">        app:layout_constraintTop_toBottomOf=&quot;@+id/btn_load&quot;</div><div class="line">        android:layout_marginStart=&quot;8dp&quot;</div><div class="line">        android:layout_marginEnd=&quot;8dp&quot; /&gt;</div><div class="line"></div><div class="line">&lt;/android.support.constraint.ConstraintLayout&gt;</div></pre></td></tr></table></figure>
+<h3 id="添加网络权限"><a href="#添加网络权限" class="headerlink" title="添加网络权限"></a>添加网络权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -407,7 +405,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            <a href="/tags/android/" rel="tag"><i class="fa fa-tag"></i> android</a>
           
         </div>
       
@@ -420,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/- mysql/" rel="next" title="MySQL相关命令">
-                <i class="fa fa-chevron-left"></i> MySQL相关命令
+              <a href="/- android之Handler/" rel="next" title="android之handler">
+                <i class="fa fa-chevron-left"></i> android之handler
               </a>
             
           </div>
@@ -430,8 +428,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/- vps性能测试/" rel="prev" title="VPS性能测试">
-                VPS性能测试 <i class="fa fa-chevron-right"></i>
+              <a href="/搭建flarum论坛/" rel="prev" title="搭建flarum论坛">
+                搭建flarum论坛 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -572,6 +579,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用AsyncTask异步加载图片"><span class="nav-number">1.</span> <span class="nav-text">使用AsyncTask异步加载图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MainActivity"><span class="nav-number">1.1.</span> <span class="nav-text">MainActivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局"><span class="nav-number">1.2.</span> <span class="nav-text">布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加网络权限"><span class="nav-number">1.3.</span> <span class="nav-text">添加网络权限</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

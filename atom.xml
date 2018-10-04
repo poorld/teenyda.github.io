@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-10T07:42:52.684Z</updated>
+  <updated>2018-10-04T03:50:23.695Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/-%20websocket%E4%B8%8Ejava/"/>
+    <id>http://yoursite.com/- websocket与java/</id>
+    <published>2018-10-04T03:50:23.646Z</published>
+    <updated>2018-10-04T03:50:23.695Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Vue.js小笔记</title>
@@ -508,36 +522,6 @@
     
     
       <category term="邮件" scheme="http://yoursite.com/tags/%E9%82%AE%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ububtu更换内核（安装锐速）</title>
-    <link href="http://yoursite.com/ubuntu%E6%9B%B4%E6%8D%A2%E5%86%85%E6%A0%B8/"/>
-    <id>http://yoursite.com/ubuntu更换内核/</id>
-    <published>2017-11-25T07:04:30.476Z</published>
-    <updated>2017-11-25T07:04:34.126Z</updated>
-    
-    <content type="html"><![CDATA[<p id="div-border-left-yellow">本篇文章主要是介绍更换内核版本为锐速所支持的版本！</p><p>ubuntu更换内核版本为：linux-image-3.03.-24-generic</p><p><span id="inline-purple">首先保证你的服务器是64位系统，锐速不支持任何ubuntu14.04的32位系统</span></p><p>1.安装3.13.0-24-generic内核<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install linux-image-extra-3.13.0-24-generic</div></pre></td></tr></table></figure></p><p>2.查看当前安装的内核：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -l | grep linux-image</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image.PNG" alt=""><br>3.除了3.13.0-24-generic的内核，我们把他们卸载掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get purge linux-image-3.13.0-121-generic linux-image-3.13.0-128-generic</div><div class="line">(多个内核用空格隔开)...</div></pre></td></tr></table></figure></p><p>可以看到，最后只剩下我们所要的内核<br><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image2.PNG" alt=""></p><p>4.更新grub系统引导文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo update-grub</div></pre></td></tr></table></figure></p><p>5.重启<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo reboot</div></pre></td></tr></table></figure></p><p>6.重启之后可以看到，我们用的是3.13.0-24-generic<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image3.PNG" alt=""></p><p>7.安装锐速破解版：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</div><div class="line">bash serverspeeder.sh</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/linux-image4.PNG" alt=""></p><p>安装成功！</p><p>锐速相关命令：</p><blockquote><p>开始：service serverSpeeder start<br>停止：service serverSpeeder stop<br>重新加载配置：service serverSpeeder reload<br>重启：service serverSpeeder restart<br>状态：service serverSpeeder status<br>统计：service serverSpeeder stats<br>更新许可文件：service serverSpeeder renewLic<br>更新：service serverSpeeder update<br>卸载：service serverSpeeder uninstall</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p id=&quot;div-border-left-yellow&quot;&gt;本篇文章主要是介绍更换内核版本为锐速所支持的版本！&lt;/p&gt;
-
-&lt;p&gt;ubuntu更换内核版本为：linux-image-3.03.-24-generic&lt;/p&gt;
-&lt;p&gt;&lt;span id=&quot;inline-purple&quot;&gt;
-      
-    
-    </summary>
-    
-      <category term="实用技术" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
-    
-      <category term="锐速" scheme="http://yoursite.com/tags/%E9%94%90%E9%80%9F/"/>
     
   </entry>
   

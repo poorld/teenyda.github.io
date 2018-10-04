@@ -45,20 +45,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/-%20websocket%E4%B8%8Ejava/"/>
-    <id>http://yoursite.com/- websocket与java/</id>
-    <published>2018-10-04T04:15:20.168Z</published>
-    <updated>2018-10-04T04:19:44.544Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Vue.js小笔记</title>
     <link href="http://yoursite.com/-%20vue.js%E5%B0%8F%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/- vue.js小笔记/</id>
@@ -523,6 +509,33 @@
     
     
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器用sendgrid发邮件</title>
+    <link href="http://yoursite.com/sendgrid%E9%82%AE%E4%BB%B6/"/>
+    <id>http://yoursite.com/sendgrid邮件/</id>
+    <published>2017-11-25T07:19:06.876Z</published>
+    <updated>2017-11-25T07:19:12.376Z</updated>
+    
+    <content type="html"><![CDATA[<p id="div-border-left-green">注册地址：<a href="https://sendgrid.com/" target="_blank" rel="external">sendgrid</a></p><p>进入仪表盘，点击Setup Guide<br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_1.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_2.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_3.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_4.PNG" alt=""></p><p>把API key复制下来<br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_5.PNG" alt=""></p><p>官方python教程地址<a href="https://github.com/sendgrid/sendgrid-python#with-mail-helper-class" target="_blank" rel="external">Github</a><br>按照官方教程，我们测试发送一封邮件！</p><blockquote><p>YOUR_API_KEY 就是刚才的api key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo &quot;export SENDGRID_API_KEY=&apos;YOUR_API_KEY&apos;&quot; &gt; sendgrid.env</div><div class="line">echo &quot;sendgrid.env&quot; &gt;&gt; .gitignore</div><div class="line">source ./sendgrid.env</div></pre></td></tr></table></figure></p></blockquote><p>安装Sendgrid<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get python-pip</div><div class="line">sudo pip install sendgrid</div></pre></td></tr></table></figure></p><p>新建一个文件，比如test.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi test.py</div></pre></td></tr></table></figure></p><p>官方给出的演示如下<i class="fa fa-cog fa-spin fa-3x fa-fw"></i><br><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_6.PNG" alt=""></p><p>我们把它复制到test.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import sendgrid</div><div class="line">import os</div><div class="line">from sendgrid.helpers.mail import *</div><div class="line"></div><div class="line">sg = sendgrid.SendGridAPIClient(apikey=os.environ.get(&apos;SENDGRID_API_KEY&apos;))</div><div class="line">from_email = Email(&quot;test@example.com&quot;)</div><div class="line">to_email = Email(&quot;test@example.com&quot;)</div><div class="line">subject = &quot;Sending with SendGrid is Fun&quot;</div><div class="line">content = Content(&quot;text/plain&quot;, &quot;and easy to do anywhere, even with Python&quot;)</div><div class="line">mail = Mail(from_email, subject, to_email, content)</div><div class="line">response = sg.client.mail.send.post(request_body=mail.get())</div><div class="line">print(response.status_code)</div><div class="line">print(response.body)</div><div class="line">print(response.headers)</div></pre></td></tr></table></figure></p><p>最后 <code>python test.py</code> <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><br><span id="inline-blue">发送成功！</span> <i class="fa fa-envelope-open" aria-hidden="true"></i></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_7.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_8.PNG" alt=""></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/sendgraid_9.PNG" alt=""></p><p>为了防止邮箱被轰炸，所以涂鸦了-_- </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p id=&quot;div-border-left-green&quot;&gt;注册地址：&lt;a href=&quot;https://sendgrid.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sendgrid&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;进入仪表盘，点击Setup Guide&lt;b
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="邮件" scheme="http://yoursite.com/tags/%E9%82%AE%E4%BB%B6/"/>
     
   </entry>
   

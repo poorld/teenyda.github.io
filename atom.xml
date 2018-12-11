@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-30T13:45:03.805Z</updated>
+  <updated>2018-12-11T08:47:41.404Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot2.0拦截器配置</title>
+    <link href="http://yoursite.com/-%20springboot2.0%E6%8B%A6%E6%88%AA%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/- springboot2.0拦截器配置/</id>
+    <published>2018-12-11T08:47:34.248Z</published>
+    <updated>2018-12-11T08:47:41.404Z</updated>
+    
+    <content type="html"><![CDATA[<p>新建一个拦截器（UserInterceptor），实现HandlerInterceptor接口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 拦截器</div><div class="line"> * @Author Administrator</div><div class="line"> * @Date 2018-12-11.</div><div class="line"> * @Email teenyda@gmail.com</div><div class="line"> */</div><div class="line"></div><div class="line">@Component</div><div class="line">public class UserInterceptor implements HandlerInterceptor&#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception &#123;</div><div class="line">        System.out.println(&quot;拦截器&quot;);</div><div class="line"></div><div class="line"></div><div class="line">        HttpSession session = request.getSession();</div><div class="line">        User user = (User) session.getAttribute(&quot;USER_SESSION&quot;);</div><div class="line">        if (user != null)&#123;</div><div class="line">            return true;</div><div class="line">        &#125;else &#123;</div><div class="line">            throw new MyException(ResultEnum.USER_LOGIN_NOTLOGIN);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>定义一个配置类去实现WebMvcConfigurer类，重写addInterceptors()方法，添加自定义的拦截器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @Author Administrator</div><div class="line"> * @Date 2018-12-11.</div><div class="line"> * @Email teenyda@gmail.com</div><div class="line"> */</div><div class="line">@Configuration</div><div class="line">public class WebMvcConfg implements WebMvcConfigurer&#123;</div><div class="line"></div><div class="line">    @Autowired</div><div class="line">    private UserInterceptor userInterceptor;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void addInterceptors(InterceptorRegistry registry) &#123;</div><div class="line">        registry.addInterceptor(userInterceptor)</div><div class="line">                //添加拦截路径</div><div class="line">                .addPathPatterns(&quot;/api/**&quot;)</div><div class="line">                //放行路径</div><div class="line">                .excludePathPatterns(&quot;/api/login&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;新建一个拦截器（UserInterceptor），实现HandlerInterceptor接口&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="java springboot" scheme="http://yoursite.com/categories/java-springboot/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>ajaxfileupload.js + ssm 上传图片</title>
@@ -514,29 +540,6 @@
     
     
       <category term="vps" scheme="http://yoursite.com/tags/vps/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL解决中文乱码问题</title>
-    <link href="http://yoursite.com/-%20mysql%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
-    <id>http://yoursite.com/- mysql中文乱码/</id>
-    <published>2017-12-08T09:33:08.189Z</published>
-    <updated>2017-12-08T09:33:12.615Z</updated>
-    
-    <content type="html"><![CDATA[<p>有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>（以test表为例）：<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_1.PNG" alt=""></p><p>查看test表的结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show create database test;</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_2.PNG" alt=""></p><p>改变test表的编码方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter database test default character set utf8 collate utf8_bin;</div></pre></td></tr></table></figure></p><p>这时候再次插入数据，发现还是不行，查看一下数据库与操作系统编码<i class="fa fa-file-text" aria-hidden="true"></i><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show variables like &apos;%char%&apos;;</div></pre></td></tr></table></figure></p><p><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_3.PNG" alt=""></p><p>我们把character_set_client、character_set_connection、character_set_database、character_set_server都设为utf8<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">set character_set_client=utf8;</div><div class="line">set character_set_connection=utf8;</div><div class="line">set character_set_database=utf8;</div><div class="line">set character_set_server=utf8;</div></pre></td></tr></table></figure></p><p>查看编码<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_4.PNG" alt=""></p><p>如果原来的表不可以插入中文的话，可以重建一张表<i class="fa fa-hand-o-right" aria-hidden="true"></i>；<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_5.PNG" alt=""></p><p>但是还有一个问题没有解决，就是重新打开数据库时，数据库编码又变回来了。<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_6.PNG" alt=""></p><p>这时，我们要从根本上解决问题–&gt;修改mysql的配置文件</p><p>查看mysql默认读取my.cnf的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql --help | grep my.cnf</div></pre></td></tr></table></figure></p><p>输出如下：<br>ubuntu@localhost:/etc/mysql$ mysql –help | grep my.cnf<br>                      order of preference, my.cnf, $MYSQL_TCP_PORT,<br>/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf</p><p>我们进入到/etc/mysql/目录下，查看my.cnf文件。发现my.cnf的文件是这样的。<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_7.PNG" alt=""><br>我们发现，这里面并没有看见相关的配置，瞬间懵逼！因为我们平时看到的是这个样子的<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_9.PNG" alt=""></p><p>没关系！我们直接修改，插入下面的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line">character-set-server=utf8</div><div class="line"></div><div class="line">[client]</div><div class="line">default-character-set=utf8</div><div class="line"></div><div class="line">[mysql]</div><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p><p>重启数据库（ubuntu 16）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/mysql restart</div></pre></td></tr></table></figure></p><p>ubuntu14执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql restart</div></pre></td></tr></table></figure></p><p>这时候查看编码方式：<br><img src="http://oyy9gorf8.bkt.clouddn.com/mysql_8.PNG" alt=""></p><p>大功告成！<i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-up" aria-hidden="true"></i></p><p>参考：<a href="http://blog.csdn.net/u012410733/article/details/61619656" target="_blank" rel="external">http://blog.csdn.net/u012410733/article/details/61619656</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;有时候在表中插入数据要用到中文，但是在插入数据时遇到了下面这种情况&lt;i class=&quot;fa fa-thumbs-o-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;（以test表为例）：&lt;br&gt;&lt;img src=&quot;http://oyy9gorf8.bkt.clou
-      
-    
-    </summary>
-    
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   

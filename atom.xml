@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-11T08:47:41.404Z</updated>
+  <updated>2018-12-11T15:10:47.905Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue.js axios post发送数据后端接收不到数据</title>
+    <link href="http://yoursite.com/-%20vue.js%20axios%E4%B9%8Bpost%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/"/>
+    <id>http://yoursite.com/- vue.js axios之post提交数据/</id>
+    <published>2018-12-11T15:10:42.570Z</published>
+    <updated>2018-12-11T15:10:47.905Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var params = new URLSearchParams();</div><div class="line">params.append(&apos;key1&apos;, &apos;value1&apos;);</div><div class="line">params.append(&apos;key2&apos;, &apos;value2&apos;);</div><div class="line">params.append(&apos;key3&apos;, &apos;value3&apos;);</div></pre></td></tr></table></figure><p>然后把params传过去，但是兼容性不好</p><h2 id="方法二-使用qs"><a href="#方法二-使用qs" class="headerlink" title="方法二: 使用qs"></a>方法二: 使用qs</h2><p>在main.js引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import qs from &apos;qs&apos;</div><div class="line">Vue.prototype.$qs = qs</div></pre></td></tr></table></figure></p><p>在组件中使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//create为对象</div><div class="line">let postData = this.$qs.stringify(this.create)</div><div class="line"></div><div class="line">//或者</div><div class="line">let postData = this.$qs.stringify(&#123;</div><div class="line">    key1: value1,</div><div class="line">    key2: value2,</div><div class="line">    key3: value3</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><p>然后把postData传过去</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; class=&quot;headerlink&quot; title=&quot;方法一:&quot;&gt;&lt;/a&gt;方法一:&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+      
+    
+    </summary>
+    
+      <category term="vue.js" scheme="http://yoursite.com/categories/vue-js/"/>
+    
+      <category term="axios" scheme="http://yoursite.com/categories/vue-js/axios/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot2.0拦截器配置</title>
@@ -198,33 +225,6 @@
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
       <category term="github" scheme="http://yoursite.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue.js axios post发送数据后端接收不到数据</title>
-    <link href="http://yoursite.com/-%20vue.js%20axios%E4%B9%8Bpost%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/"/>
-    <id>http://yoursite.com/- vue.js axios之post提交数据/</id>
-    <published>2018-08-22T12:57:14.241Z</published>
-    <updated>2018-08-22T12:57:22.232Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var params = new URLSearchParams();</div><div class="line">params.append(&apos;key1&apos;, &apos;value1&apos;);</div><div class="line">params.append(&apos;key2&apos;, &apos;value2&apos;);</div><div class="line">params.append(&apos;key3&apos;, &apos;value3&apos;);</div></pre></td></tr></table></figure><p>然后把params传过去，但是兼容性不好</p><h2 id="方法二-使用qs"><a href="#方法二-使用qs" class="headerlink" title="方法二: 使用qs"></a>方法二: 使用qs</h2><p>在main.js引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import qs from &apos;qs&apos;</div><div class="line">Vue.prototype.$qs = qs</div></pre></td></tr></table></figure></p><p>在组件中使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//create为对象</div><div class="line">let postData = this.$qs.stringify(this.create)</div><div class="line"></div><div class="line">//或者</div><div class="line">let postData = this.$qs.stringify(&#123;</div><div class="line">    key1: value1,</div><div class="line">    key2: value2,</div><div class="line">    key3: value3</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><p>然后把postData传过去</p><p>测试使用JSON.stringify()不行</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; class=&quot;headerlink&quot; title=&quot;方法一:&quot;&gt;&lt;/a&gt;方法一:&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
-      
-    
-    </summary>
-    
-      <category term="vue.js" scheme="http://yoursite.com/categories/vue-js/"/>
-    
-      <category term="axios" scheme="http://yoursite.com/categories/vue-js/axios/"/>
-    
-    
-      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
     
   </entry>
   
